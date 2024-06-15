@@ -1,10 +1,5 @@
 PT_UTIL = {}
 
--- CARICO FIGLI
-
-pt_manageCards = require(SMODS.current_mod.path.."/utils/PT_manageCards")
-pt_gameModifiers = require(SMODS.current_mod.path.."/utils/PT_gameModifiers")
-
 -- VARIABILI GLOBALI
 
 G.Util_Vars = {

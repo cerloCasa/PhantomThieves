@@ -3,7 +3,7 @@ PT_MANAGECARDS = {}
 -- FUNZIONI DI SUPPORTO
 
 function PT_MANAGECARDS.createConsumable()
-    
+    -- TO-DO
 end
 
 function PT_MANAGECARDS.createJoker(key,edition,negative)
