@@ -16,10 +16,13 @@ function PT_UTIL.resetGlobalVars()
     G.GAME.Util_MostUsedTarot_key = nil
     G.GAME.Util_MostUsedTarot_N = 0
     G.GAME.Util_UsefulTarots = {}
+    pt_manageCards.resetGlobalVars()
     pt_RobinHood.resetGlobalVars()
 end
 
 -- FUNZIONI DI SUPPORTO
+
+pt_manageCards = require(SMODS.current_mod.path.."/PT_manageCards")
 
 function PT_UTIL.evolve(start,dest)
     sendTraceMessage("Evolving to " .. dest,start.config.center_key)
