@@ -20,7 +20,6 @@ function PT_UTIL.resetGlobalVars()
     G.GAME.Util_MostUsedTarot_key = nil
     G.GAME.Util_MostUsedTarot_N = 0
     G.GAME.Util_UsefulTarots = {}
-    pt_manageCards.resetGlobalVars()
     pt_RobinHood.resetGlobalVars()
 end
 
