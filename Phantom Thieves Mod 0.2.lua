@@ -2,7 +2,7 @@
 --- MOD_NAME: Phantom Thieves 0.2
 --- MOD_ID: PhantomThieves
 --- MOD_AUTHOR: [Cerlo,Eremel]
---- MOD_DESCRIPTION: A Persona Mod
+--- MOD_DESCRIPTION: A Persona 5 Mod
 --- BADGE_COLOR: DB2109
 --- PREFIX: PT
 --- PRIORITY: -1000000
