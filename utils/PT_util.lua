@@ -1,6 +1,6 @@
 PT_UTIL = {}
 
--- VARIABILI GLOBALI 
+-- VARIABILI GLOBALI
 
 G.Util_Vars = {
     Util_UsedTarot = {},
