@@ -11,7 +11,7 @@ _RELEASE_MODE = false
 
 -- FUNZIONI DI SUPPORTO / SUPPORT FUNCTIONS
 
-pt_util = require(SMODS.current_mod.path.."/PT_util")
+pt_util = require(SMODS.current_mod.path.."/utils/PT_util")
 --pt_TheContract = require(SMODS.current_mod.path.."/PT_TheContract")
 --pt_Zorro = require(SMODS.current_mod.path.."/PT_Zorro")
 --pt_Johanna = require(SMODS.current_mod.path.."/PT_Johanna")
