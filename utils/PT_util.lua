@@ -3,6 +3,7 @@ PT_UTIL = {}
 -- CARICO FIGLI
 
 pt_manageCards = require(SMODS.current_mod.path.."/utils/PT_manageCards")
+pt_gameModifiers = require(SMODS.current_mod.path.."/utils/PT_gameModifiers")
 
 -- VARIABILI GLOBALI
 
@@ -56,20 +57,6 @@ function PT_UTIL.tarotUsed(tarot)
         G.GAME.Util_MostUsedTarot_N = G.GAME.Util_UsedTarot[tarot.config.center_key]
     end
     sendTraceMessage("The most used Tarot is now "..G.GAME.Util_MostUsedTarot_key.." with "..G.GAME.Util_MostUsedTarot_N.." uses","PTutil")
-end
-
--- MODIFICA LA FUNZIONE use_card CHE SI ATTIVA QUANDO UN CONSUMABILE VIENE USATO
-
-local G_FUNCS_use_card_ref = G.FUNCS.use_card
-G.FUNCS.use_card = function(e,mute,nosave)
-    G_FUNCS_use_card_ref(e,mute,nosave)
-    local card = e.config.ref_table
-    if card.ability.consumeable then
-        if (card.ability.set == 'Tarot') then
-            sendTraceMessage("Calling tarotUsed function","PT_UTIL:use_card")
-            pt_util.tarotUsed(card)
-        end
-    end
 end
 
 return PT_UTIL
