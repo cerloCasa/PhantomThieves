@@ -35,24 +35,9 @@ function PT_UTIL.evolve(start,dest)
     end
 
     -- Destroy START
-    G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
-        func = function()
-                G.jokers:remove_card(start)
-                start:remove()
-                start = nil
-            return true; end}))
-
+    pt_manageCards.destroyJoker(start)
     -- Create DEST with Edition and Negative
-    G.E_MANAGER:add_event(Event({
-        func = function() 
-            local _card = create_card('Joker',G.jokers, nil, nil, nil, Edition and Negative, dest)
-            _card:start_materialize()
-            _card:add_to_deck()
-            if Edition then
-                _card:set_edition(Edition,Negative)
-            end
-            G.jokers:emplace(_card)
-            return true; end}))
+    pt_manageCards.createJoker(dest,Edition,Negative)
     sendTraceMessage("Successfully evolved to " .. dest,start.config.center_key)
 end
 
