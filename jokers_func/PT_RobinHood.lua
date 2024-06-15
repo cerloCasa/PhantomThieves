@@ -4,7 +4,7 @@ G.J08_RobinHood_Vars = {
     J08_canBetrayalSpawn = false,
     J08_RoundsCounter = 0,
 }
-
+ 
 -- RESET VARIABILI GLOBALI
 
 function PT_ROBINHOOD.resetGlobalVars()
