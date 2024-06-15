@@ -1,6 +1,6 @@
 PT_MANAGECARDS = {}
 
--- FUNZIONI DI SUPPORTO
+-- FUNZIONI DI SUPPORTO 
 
 function PT_MANAGECARDS.createConsumable()
     -- TO-DO
