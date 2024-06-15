@@ -13,12 +13,10 @@ _RELEASE_MODE = false
 pt_loader = require(SMODS.current_mod.path.."/utils/PT_loader")
 
 -- VARIABILI GLOBALI / GLOBAL VARIABLES
-
 G.PhantomThieves = {
 }
 
 -- INIZIO DELLA PARTITA / START OF THE RUN
-
 local BackApply_to_run_ref = Back.apply_to_run
 function Back.apply_to_run(self)
 	BackApply_to_run_ref(self)
@@ -27,7 +25,6 @@ function Back.apply_to_run(self)
 end
 
 -- JOLLY
-
 SMODS.Joker { -- Robin Hood
 	key = 'RobinHood',
 	loc_txt = {
@@ -157,7 +154,6 @@ SMODS.Joker { -- Hereward
 -- CONSUMABILI / CONSUMEABLES
 
 -- ASSETS
-
 SMODS.Atlas {
 	key = 'modicon',
 	px = 34,
