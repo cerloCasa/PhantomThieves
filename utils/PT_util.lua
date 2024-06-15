@@ -2,7 +2,7 @@ PT_UTIL = {}
 
 -- CARICO FIGLI
 
-pt_manageCards = require(SMODS.current_mod.path.."/PT_manageCards")
+pt_manageCards = require(SMODS.current_mod.path.."/utils/PT_manageCards")
 
 -- VARIABILI GLOBALI
 
