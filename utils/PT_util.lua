@@ -36,6 +36,7 @@ function PT_UTIL.evolve(start,dest)
 
     -- Destroy START
     pt_manageCards.destroyJoker(start)
+    
     -- Create DEST with Edition and Negative
     pt_manageCards.createJoker(dest,Edition,Negative)
     sendTraceMessage("Successfully evolved to " .. dest,start.config.center_key)
