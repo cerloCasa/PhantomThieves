@@ -8,7 +8,7 @@ G.Util_manageCards_Vars = {
 
 -- RESET VARIABILI GLOBALI
 
-function PT_UTIL.resetGlobalVars()
+function PT_MANAGECARDS.resetGlobalVars()
     
 end
 
