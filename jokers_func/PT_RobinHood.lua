@@ -43,12 +43,6 @@ function PT_ROBINHOOD.createMostUsedTarot()
     if G.GAME.Util_MostUsedTarot_key then
         sendTraceMessage("Creating "..G.GAME.Util_MostUsedTarot_key.."...","RobinHood")
         pt_manageCards.createConsumable(G.GAME.Util_MostUsedTarot_key,'Tarot',nil,nil)
-        -- G.E_MANAGER:add_event(Event({
-        --     func = function() 
-        --         local _card = create_card('Tarot',G.tarots, nil, nil, nil, nil, G.GAME.Util_MostUsedTarot_key)
-        --         _card:add_to_deck()
-        --         G.consumeables:emplace(_card)
-        --         return true; end}))
     else
         sendTraceMessage("No tarots used in this run :(","RobinHood")
     end
@@ -60,13 +54,6 @@ function PT_ROBINHOOD.createNegativeMostUsedTarot()
     if G.GAME.Util_MostUsedTarot_key then
         sendTraceMessage("Creating "..G.GAME.Util_MostUsedTarot_key.."...","RobinHood")
         pt_manageCards.createConsumable(G.GAME.Util_MostUsedTarot_key,'Tarot',{negative = true},true)
-        -- G.E_MANAGER:add_event(Event({
-        --     func = function() 
-        --         local _card = create_card('Tarot',G.tarots, nil, nil, nil, nil, G.GAME.Util_MostUsedTarot_key)
-        --         _card:add_to_deck()
-        --         _card:set_edition({negative = true}, true)
-        --         G.consumeables:emplace(_card)
-        --         return true; end}))
     else
         sendTraceMessage("No tarots used in this run :(","RobinHood")
     end
