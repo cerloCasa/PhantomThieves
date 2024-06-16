@@ -39,8 +39,8 @@ function PT_UTIL.evolve(start,dest)
 end
 
 function PT_UTIL.rankUp(card) 
-    card.ability.extra.Rank = card.ability.extra.Rank + 1
-    sendTraceMessage("New rank is " .. card.ability.extra.Rank,card.config.center_key)
+    card.rank = card.rank + 1
+    sendTraceMessage("New rank is " .. card.rank,card.config.center_key)
 end
 
 function PT_UTIL.tarotUsed(tarot)
