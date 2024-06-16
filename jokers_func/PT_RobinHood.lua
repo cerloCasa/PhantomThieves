@@ -4,9 +4,8 @@ PT_ROBINHOOD = {}
 
 function PT_ROBINHOOD.resetGlobalVars()
     G.GAME.J08_canBetrayalSpawn = false
-    sendTraceMessage("J08_canBetrayalSpawn is " .. tostring(G.GAME.J08_canBetrayalSpawn),"RobinHood")
     G.GAME.J08_RoundsCounter = 0
-    sendTraceMessage("J08_RoundsCounter is " .. G.GAME.J08_RoundsCounter,"RobinHood")
+	sendTraceMessage("Global vars have been reset","Robin Hood")
 end
 
 -- JOKERS INIT
@@ -36,10 +35,10 @@ SMODS.Joker { -- Robin Hood
 	linked_tarot = 'c_justice',
 	calculate = function(self,card,context)
 		if context.setting_blind then
-			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
+			PT_ROBINHOOD.RoundStart(card,card.ability.extra.Rank)
 		end
 		if context.end_of_round and context.game_over == false then
-			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
+			PT_ROBINHOOD.RoundWon(card,card.ability.extra.Rank)
 		end
 		if context.using_consumeable then
 			-- Calcola Rank Up e Evoluzione
@@ -85,10 +84,10 @@ SMODS.Joker { -- Loki
 	linked_tarot = 'c_justice',
 	calculate = function(self,card,context)
 		if context.setting_blind then
-			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
+			PT_ROBINHOOD.RoundStart(card,card.ability.extra.Rank)
 		end
 		if context.end_of_round and context.game_over == false then
-			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
+			PT_ROBINHOOD.RoundWon(card,card.ability.extra.Rank)
 		end
 		if context.using_consumeable then
 			-- Calcola Rank Up e Evoluzione
@@ -134,10 +133,10 @@ SMODS.Joker { -- Hereward
 	linked_tarot = 'c_justice',
 	calculate = function(self,card,context)
 		if context.setting_blind then
-			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
+			PT_ROBINHOOD.RoundStart(card,card.ability.extra.Rank)
 		end
 		if context.end_of_round and context.game_over == false then
-			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
+			PT_ROBINHOOD.RoundWon(card,card.ability.extra.Rank)
 		end
 	end
 }
@@ -165,9 +164,9 @@ function PT_ROBINHOOD.RoundWon(card,rank)
         J08_canBetrayalSpawn = true
     end
     if rank < 9 then
-	    pt_RobinHood.createMostUsedTarot()
+	    PT_ROBINHOOD.createMostUsedTarot()
     else
-        pt_RobinHood.createNegativeMostUsedTarot()
+        PT_ROBINHOOD.createNegativeMostUsedTarot()
     end
 end
 

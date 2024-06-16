@@ -17,6 +17,7 @@ function PT_UTIL.resetGlobalVars()
     G.GAME.Util_MostUsedTarot_N = 0
     G.GAME.Util_UsefulTarots = {}
     pt_RobinHood.resetGlobalVars()
+    pt_Milady.resetGlobalVars()
 end
 
 -- FUNZIONI DI SUPPORTO
