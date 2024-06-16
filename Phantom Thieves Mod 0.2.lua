@@ -16,14 +16,6 @@ pt_loader = require(SMODS.current_mod.path.."/utils/PT_loader")
 G.PhantomThieves = {
 }
 
--- INIZIO DELLA PARTITA / START OF THE RUN
-local BackApply_to_run_ref = Back.apply_to_run
-function Back.apply_to_run(self)
-	BackApply_to_run_ref(self)
-	pt_util.resetGlobalVars()
-	return true
-end
-
 -- JOLLY
 SMODS.Joker { -- Robin Hood
 	key = 'RobinHood',
