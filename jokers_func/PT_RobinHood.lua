@@ -9,9 +9,9 @@ G.J08_RobinHood_Vars = {
 
 function PT_ROBINHOOD.resetGlobalVars()
     G.GAME.J08_canBetrayalSpawn = false
-    sendTraceMessage("J08_canBetrayalSpawn is " .. tostring(G.GAME.J08_canBetrayalSpawn),"Joker08")
+    sendTraceMessage("J08_canBetrayalSpawn is " .. tostring(G.GAME.J08_canBetrayalSpawn),"RobinHood")
     G.GAME.J08_RoundsCounter = 0
-    sendTraceMessage("J08_RoundsCounter is " .. G.GAME.J08_RoundsCounter,"Joker08")
+    sendTraceMessage("J08_RoundsCounter is " .. G.GAME.J08_RoundsCounter,"RobinHood")
 end
 
 -- CALCULATE JOKER

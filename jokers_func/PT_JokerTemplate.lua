@@ -9,9 +9,9 @@ G.J00_JokerName_Vars = { -- Replace 00 with the Joker's number
 
 function PT_JOKERNAME.resetGlobalVars()
     G.GAME.J00_x = false
-    sendTraceMessage("J00_x is " .. tostring(G.GAME.J00_x),"Joker00")
+    sendTraceMessage("J00_x is " .. tostring(G.GAME.J00_x),"JokerName")
     G.GAME.J00_y = 0
-    sendTraceMessage("J00_y is " .. G.GAME.J00_y,"Joker00")
+    sendTraceMessage("J00_y is " .. G.GAME.J00_y,"JokerName")
 end
 
 -- CALCULATE JOKER
