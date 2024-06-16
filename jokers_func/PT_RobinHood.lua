@@ -28,6 +28,9 @@ function PT_ROBINHOOD.RoundStart(card,rank)
 end
 
 function PT_ROBINHOOD.RoundWon(card,rank)
+    if G.GAME.J08_RoundsCounter >= 5 then
+        J08_canBetrayalSpawn = true
+    end
     if rank < 9 then
 	    pt_RobinHood.createMostUsedTarot()
     else
