@@ -3,8 +3,8 @@
 *I have to add the description of PT_JokerTemplate.lua* to this guide, but I think you can grasp its purpose even without my help.
 ## The main idea
 I don't like having single long files with all the functions inside.
-Whenever you need to modify something you need to scroll back and fourth on it and it looks messy in my opinion.
-**Multiple short files is better than Single long file** 
+Whenever you need to modify something you need to scroll back and fourth on it and it looks messy in my opinion. 
+**Multiple short files is better than Single long file.** 
 The repo only has the main file (*Phantom Thieves Mod.lua*) on it, the rest is in its own folder.
 
 Another concept is that whenever multiple lines of code are used many times, they are condensed into a *util* function. An example is the `rankUp()` function held inside `utils/PT_util.lua` and called by every Joker.
@@ -32,7 +32,7 @@ calculate = function(self,card,context) -- Robin Hood Joker
 	end
 end
 ```
-	and all the `pt_RobinHood` functions are held inside `jokers_func/PT_RobinHood.lua`.
+and all the `pt_RobinHood` functions are held inside `jokers_func/PT_RobinHood.lua`.
 ## Global variables
 Whenever I need to use variables that are used by multiple functions or in multiple files, I like to make global variables at the top of the file. An example of this concept is the start of `PT_RobinHood.lua`:
 ```lua
