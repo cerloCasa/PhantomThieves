@@ -17,12 +17,10 @@ end
 -- CALCULATE JOKER
 
 function PT_ROBINHOOD.RoundStart(card,rank)
-    G.GAME.J08_canBetrayalSpawn = false
     if rank < 10 then
 	    G.GAME.J08_RoundsCounter = G.GAME.J08_RoundsCounter + 1
     end
     if rank < 9 then
-        G.GAME.J08_canBetrayalSpawn = true
         G.GAME.J08_RoundsCounter = G.GAME.J08_RoundsCounter + 1
     end
 end
