@@ -157,19 +157,19 @@ SMODS.Atlas {
 	key = 'RobinHood',
 	px = 71,
 	py = 95,
-	path = '07 - Robin Hood.png'
+	path = '08 - Robin Hood.png'
 }
 
 SMODS.Atlas {
 	key = 'Loki',
 	px = 71,
 	py = 95,
-	path = '07.1 - Loki.png'
+	path = '08.1 - Loki.png'
 }
 
 SMODS.Atlas {
 	key = 'Hereward',
 	px = 71,
 	py = 95,
-	path = '07.2 - Hereward.png'
+	path = '08.2 - Hereward.png'
 }
