@@ -2,8 +2,21 @@ PT_MANAGECARDS = {}
 
 -- FUNZIONI DI SUPPORTO 
 
-function PT_MANAGECARDS.createConsumable()
-    -- TO-DO
+function PT_MANAGECARDS.createConsumable(key,set,edition,negative)
+    G.E_MANAGER:add_event(Event({
+        func = function() 
+            if set == 'Tarot' then
+                local _card = create_card('Tarot',G.tarots, nil, nil, nil, nil, key)
+            else
+                sendErrorMessage('Attempt to create a non valid consumable','manageCards')
+                return true;
+            end
+            _card:add_to_deck()
+            if edition then
+                _card:set_edition(edition, negative)
+            end
+            G.consumeables:emplace(_card)
+            return true; end}))
 end
 
 function PT_MANAGECARDS.createJoker(key,edition,negative)
