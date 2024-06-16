@@ -1,8 +1,6 @@
 PT_ROBINHOOD = {}
 
-J08_RobinHood_Vars = {}
-
--- RESET VARIABILI GLOBALI
+-- RESET VARIABILI
 
 function PT_ROBINHOOD.resetGlobalVars()
     G.GAME.J08_canBetrayalSpawn = false
@@ -18,17 +16,14 @@ SMODS.Joker { -- Robin Hood
 	loc_txt = {
 		['it'] = {
 			name = 'Robin Hood',
-			text = {''},
+			text = {'Crea il tuo {C:purple}Tarocco','più usato alla','fine del round','{C:inactive}(Serve spazio)'},
 		},
 		['default'] = {
 			name = 'Robin Hood',
-			text = {'Create your most','used {C:purple}Tarot{} at the end','of the round','{C:inactive}(Must have room)','{C:blue}RANK #1#'},
+			text = {'Create your most','used {C:purple}Tarot{} at the end','of the round','{C:inactive}(Must have room)'},
 		},
 	},
 	config = {extra = {Rank = 1}},
-    loc_vars = function(self,info_queue,card)
-		return {vars = {card.ability.extra.Rank}}
-	end,
 	rarity = 2,
 	pos = { x = 0 , y = 0 },
 	atlas = 'RobinHood',
@@ -62,16 +57,23 @@ SMODS.Joker { -- Robin Hood
 	end
 }
 
+SMODS.Atlas {
+	key = 'RobinHood',
+	px = 71,
+	py = 95,
+	path = '08 - Robin Hood.png'
+}
+
 SMODS.Joker { -- Loki
 	key = 'Loki',
 	loc_txt = {
 		['it'] = {
 			name = 'Loki',
-			text = {''},
+			text = {'Crea una copia {C:dark_edition}negativa','del tuo {C:purple}Tarot{} più','usato alla fine del round','{C:red}(ATTENZIONE!)'},
 		},
 		['default'] = {
 			name = 'Loki',
-			text = {'Create a {C:dark_edition}negative{} copy','of your most','used {C:purple}Tarot{} at the end','of the round','{C:red}(WATCH OUT!)'},
+			text = {'Create a {C:dark_edition}negative{} copy','of your most used','{C:purple}Tarot{} at the end','of the round','{C:red}(WATCH OUT!)'},
 		},
 	},
 	config = {extra = {Rank = 9}},
@@ -89,7 +91,7 @@ SMODS.Joker { -- Loki
 		if context.setting_blind then
 			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
 		end
-		if context.end_of_round and not context.game_over then
+		if context.end_of_round and context.game_over == false then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
 		end
 		if context.selling_self then
@@ -107,16 +109,23 @@ SMODS.Joker { -- Loki
 	end
 }
 
+SMODS.Atlas {
+	key = 'Loki',
+	px = 71,
+	py = 95,
+	path = '08.1 - Loki.png'
+}
+
 SMODS.Joker { -- Hereward
 	key = 'Hereward',
 	loc_txt = {
 		['it'] = {
 			name = '{C:red}Hereward',
-			text = {''},
+			text = {'Crea una copia {C:dark_edition}negativa','del tuo {C:purple}Tarot{} più','usato alla fine del round'},
 		},
 		['default'] = {
 			name = '{C:red}Hereward',
-			text = {'Create a {C:dark_edition}negative{} copy','of your most','used {C:purple}Tarot{} at the end','of the round'},
+			text = {'Create a {C:dark_edition}negative{} copy','of your most used','{C:purple}Tarot{} at the end','of the round'},
 		},
 	},
 	config = {extra = {Rank = 10}},
@@ -134,13 +143,20 @@ SMODS.Joker { -- Hereward
 		if context.setting_blind then
 			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
 		end
-		if context.end_of_round and not context.game_over then
+		if context.end_of_round and context.game_over == false then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
 		end
 		if context.selling_self then
 			pt_util.removeFromUseful('Justice')
 		end
 	end
+}
+
+SMODS.Atlas {
+	key = 'Hereward',
+	px = 71,
+	py = 95,
+	path = '08.2 - Hereward.png'
 }
 
 -- CALCULATE JOKER

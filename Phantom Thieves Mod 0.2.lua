@@ -30,24 +30,3 @@ SMODS.Atlas {
 	py = 95,
 	path = '03 - Milady.png'
 }
-
-SMODS.Atlas {
-	key = 'RobinHood',
-	px = 71,
-	py = 95,
-	path = '08 - Robin Hood.png'
-}
-
-SMODS.Atlas {
-	key = 'Loki',
-	px = 71,
-	py = 95,
-	path = '08.1 - Loki.png'
-}
-
-SMODS.Atlas {
-	key = 'Hereward',
-	px = 71,
-	py = 95,
-	path = '08.2 - Hereward.png'
-}
