@@ -52,7 +52,7 @@ SMODS.Joker { -- Robin Hood
 		if context.setting_blind then
 			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
 		end
-		if context.end_of_round and context.game_over == false then
+		if context.end_of_round and not context.game_over then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
 		end
 		if context.selling_self then
@@ -97,7 +97,7 @@ SMODS.Joker { -- Loki
 		if context.setting_blind then
 			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
 		end
-		if context.end_of_round and context.game_over == false then
+		if context.end_of_round and not context.game_over then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
 		end
 		if context.selling_self then
@@ -142,7 +142,7 @@ SMODS.Joker { -- Hereward
 		if context.setting_blind then
 			pt_RobinHood.RoundStart(card,card.ability.extra.Rank)
 		end
-		if context.end_of_round and context.game_over == false then
+		if context.end_of_round and not context.game_over then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
 		end
 		if context.selling_self then
