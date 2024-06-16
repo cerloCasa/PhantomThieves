@@ -41,14 +41,10 @@ SMODS.Joker { -- Robin Hood
 		if context.end_of_round and context.game_over == false then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
 		end
-		if context.selling_self then
-			pt_RobinHood.SellingSelf(card,card.ability.extra.Rank)
-		end
 		if context.using_consumeable then
 			-- Calcola Rank Up e Evoluzione
 			if context.consumeable.ability.name == 'Justice' and card.ability.extra.Rank < 10 then
-				card.ability.extra.Rank = card.ability.extra.Rank + 1
-                sendTraceMessage("New rank is " .. card.ability.extra.Rank,card.conficenter_key)
+				pt_util.rankUp(card)
 			end
 			if card.ability.extra.Rank == 9 then
 				pt_util.evolve(card,'j_PT_Loki')
@@ -93,9 +89,6 @@ SMODS.Joker { -- Loki
 		end
 		if context.end_of_round and context.game_over == false then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
-		end
-		if context.selling_self then
-			pt_util.removeFromUseful('Justice')
 		end
 		if context.using_consumeable then
 			-- Calcola Rank Up e Evoluzione
@@ -145,9 +138,6 @@ SMODS.Joker { -- Hereward
 		end
 		if context.end_of_round and context.game_over == false then
 			pt_RobinHood.RoundWon(card,card.ability.extra.Rank)
-		end
-		if context.selling_self then
-			pt_util.removeFromUseful('Justice')
 		end
 	end
 }
