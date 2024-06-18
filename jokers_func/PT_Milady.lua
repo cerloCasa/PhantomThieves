@@ -94,10 +94,12 @@ SMODS.Joker { -- 03.1 - Astarte
 		['it'] = {
 			name = 'Astarte',
 			text = {''},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 		['default'] = {
 			name = 'Milady',
 			text = {'Earn {C:money}$#1#{} after each','hand played'},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 	},
 	config = {extra = {Rank = 9}},
@@ -151,10 +153,12 @@ SMODS.Joker { -- 03.2 - Lucy
 		['it'] = {
 			name = 'Lucy',
 			text = {''},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 		['default'] = {
 			name = 'Lucy',
 			text = {'Earn {C:money}$#1#{} after each','hand played'},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 	},
 	config = {extra = {Rank = 10}},

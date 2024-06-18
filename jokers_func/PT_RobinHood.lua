@@ -65,10 +65,12 @@ SMODS.Joker { -- Loki
 		['it'] = {
 			name = 'Loki',
 			text = {'Crea una copia {C:dark_edition}negativa','del tuo {C:purple}Tarot{} più','usato alla fine del round','{C:red}(ATTENZIONE!)'},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 		['default'] = {
 			name = 'Loki',
 			text = {'Create a {C:dark_edition}negative{} copy','of your most used','{C:purple}Tarot{} at the end','of the round','{C:red}(WATCH OUT!)'},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 	},
 	config = {extra = {Rank = 9}},
@@ -114,10 +116,12 @@ SMODS.Joker { -- Hereward
 		['it'] = {
 			name = '{C:red}Hereward',
 			text = {'Crea una copia {C:dark_edition}negativa','del tuo {C:purple}Tarot{} più','usato alla fine del round'},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 		['default'] = {
 			name = '{C:red}Hereward',
 			text = {'Create a {C:dark_edition}negative{} copy','of your most used','{C:purple}Tarot{} at the end','of the round'},
+			unlock = {'Evolve the previous','Joker to unlock','this one'},
 		},
 	},
 	config = {extra = {Rank = 10}},
