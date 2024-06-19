@@ -1,4 +1,6 @@
 # Phantom Thieves Jokers
+![image info](./assets/2x/modicon.png)
+
 This mod is currently a **Work in Progress**.
 - Only 7/41 Jokers added,
 - Only 0/6 Consumeables added,
