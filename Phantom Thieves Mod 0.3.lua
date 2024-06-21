@@ -169,6 +169,10 @@ function SMODS.current_mod.process_loc_text()
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Empress Tarot','to {C:red}rank up{} this Joker'}
 	}
+	G.localization.descriptions.Other['PT_LinkedTarot_Strength'] = {
+		name = 'Linked Tarot',
+		text = {'Use the {C:purple}Strength Tarot','to {C:red}rank up{} this Joker'}
+	}
 	G.localization.descriptions.Other['PT_LinkedTarot_Death'] = {
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Death Tarot','to {C:red}rank up{} this Joker'}
@@ -189,6 +193,8 @@ end
 load(NFS.read(SMODS.current_mod.path .. 'jokers/03_Milady.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/08_RobinHood.lua'))()
+
+load(NFS.read(SMODS.current_mod.path .. 'jokers/11_Twins.lua'))() -- line 197
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/13_BackAlleyDoctor.lua'))()
 

@@ -71,9 +71,6 @@ SMODS.Joker { -- 11.1 Lavenza
 	},
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Strength', set = 'Other'}
-		return {
-
-        }
 	end,
 	config = {extra = {Rank = 10}},
 	rarity = 1,
