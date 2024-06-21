@@ -194,7 +194,7 @@ load(NFS.read(SMODS.current_mod.path .. 'jokers/03_Milady.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/08_RobinHood.lua'))()
 
-load(NFS.read(SMODS.current_mod.path .. 'jokers/11_Twins.lua'))() -- line 197
+load(NFS.read(SMODS.current_mod.path .. 'jokers/11_Twins.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/13_BackAlleyDoctor.lua'))()
 
