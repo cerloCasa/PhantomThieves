@@ -15,9 +15,13 @@ G.PhantomTheves_Vars = {
 	PTvar_mostUsedTarot_name = nil,
     PTvar_mostUsedTarot_N = 0,
     PTvar_usefulTarots = {},
+
+    -- 03 Milady
 	PTvar_Milady = {},
-	PTvar_RobinHood_canBetayalSpawn = false,
-	PTvar_RobinHood_roundCounter = 0
+    
+    -- 08 Robin Hood
+	PTvar_RobinHood_canBetrayalSpawn = false,
+	PTvar_RobinHood_roundCounter = 0,
 }
 
 -- MODIFY VANILLA GAME FUNCTIONS

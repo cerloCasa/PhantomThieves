@@ -81,7 +81,7 @@ SMODS.Joker { -- 08.1 Loki
 	pos = {x = 9, y = 1},
 	soul_pos = {x = 11, y = 3},
 	atlas = 'Jokers',
-	cost = 5,
+	cost = 7,
 	unlocked = false,
 	discovered = false,
 	blueprint_compat = true,
@@ -138,7 +138,7 @@ SMODS.Joker { -- 08.2 Hereward
 	pos = {x = 10, y = 1},
 	soul_pos = {x = 12, y = 3},
 	atlas = 'Jokers',
-	cost = 7,
+	cost = 10,
 	unlocked = false,
 	discovered = false,
 	blueprint_compat = true,
@@ -159,8 +159,9 @@ SMODS.Joker { -- 08.2 Hereward
 }
 
 function PT_RobinHood_resetGlobalVars()
-	G.GAME.PTvar_RobinHood_canBetayalSpawn = false
-	G.GAME.PTvar_RobinHood_roundCounter = 0
+	G.GAME.PTvar_RobinHood_canBetrayalSpawn = false
+	G.GAME.PTvar_RobinHood_canBetrayalSpawn = 0
+	print("canBetrayalSpawn = "..tostring(G.GAME.PTvar_RobinHood_canBetrayalSpawn))
 	sendTraceMessage("Robin Hood's variabiles have been reset","PT_RobinHood_resetGlobalVars")
 end
 
@@ -175,7 +176,7 @@ end
 
 function PT_RobinHood_RoundWon(card,rank)
     if G.GAME.PTvar_RobinHood_roundCounter >= 5 then
-        PTvar_RobinHood_canBetayalSpawn = true
+        PTvar_RobinHood_canBetrayalSpawn = true
     end
     if rank < 9 then
 	    PT_RobinHood_createMostUsedTarot()

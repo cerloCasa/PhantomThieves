@@ -35,7 +35,7 @@ SMODS.Joker { -- 13 Back Alley Doctor
 		PT_soulPos(card)
 	end,
 	atlas = 'Jokers',
-	cost = 5,
+	cost = 4,
 	unlocked = true,
 	discovered = false,
 	blueprint_compat = true,
