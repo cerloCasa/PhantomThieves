@@ -27,7 +27,7 @@ let jokers = [
   {
     name: "Milady",
     text: [
-      "Earn {C:important}$3{} at the end of the round"
+      "Earn {C:gold}$3{} at the end of the round"
     ],
     image_url: "img/j_joker.png",
     rarity: "Uncommon"
@@ -51,7 +51,7 @@ let jokers = [
   {
     name: "Carmen",
     text: [
-      "When {C:important}Blind{} is selected, create one {C:common}common {C:red}Phantom Thieves {C:joker}Joker",
+      "When {C:important}Blind{} is selected, create one {C:common}common {C:red}Phantom Thieves {C:important}Joker",
       "{C:inactive}(Must have room)"
     ],
     image_url: "img/j_joker.png",
@@ -173,7 +173,7 @@ let jokers = [
   {
     name: "Arsène",
     text: [
-      "Copies the ability of {C:joker}Joker{} to the left"
+      "Copies the ability of {C:important}Joker{} to the left"
     ],
     image_url: "img/j_joker.png",
     rarity: "Rare"
