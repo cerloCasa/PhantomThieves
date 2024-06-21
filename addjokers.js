@@ -1,12 +1,15 @@
 let jokers = [
-  // {
-  //   name: "Joker",
-  //   text: [
-  //     "{C:mult}+4{} Mult"
-  //   ],
-  //   image_url: "img/j_joker.png",
-  //   rarity: "Common"
-  // }
+  {
+    name: "The Contract",
+    text: [
+      "{C:important}+1{} hand size,",
+      "each {C:red}Phantom Thieves",
+      "Joker you own",
+      "gives {C:xmult}X1.3{} Mult"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Legendary"
+  }
 ]
 
 // works the same. 
@@ -110,22 +113,6 @@ let blinds = [
 ]
 
 let shop_items = [
-  {
-    name: "Joker",
-    text: [
-      "{C:mult}+4{} Mult"
-    ],
-    image_url: "img/j_joker.png",
-    rarity: "Voucher"
-  },
-  {
-    name: "Joker",
-    text: [
-      "{C:mult}+4{} Mult"
-    ],
-    image_url: "img/j_joker.png",
-    rarity: "Pack"
-  },
 ]
 
 let cols = {
