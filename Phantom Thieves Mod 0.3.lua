@@ -188,7 +188,7 @@ function SMODS.current_mod.process_loc_text()
 	sendTraceMessage("Lock text done","PTprocessLocText")
 end
 
--- JOKERS 
+-- JOKERS
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/03_Milady.lua'))()
 
