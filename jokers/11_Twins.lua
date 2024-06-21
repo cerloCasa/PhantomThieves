@@ -89,7 +89,7 @@ SMODS.Joker { -- 11.1 Lavenza
 	linked_tarot = 'c_strength',
 	add_to_deck = function(self,card,from_debuff)
 		G.jokers.config.card_limit = G.jokers.config.card_limit + 3 
-	end
+	end,
     remove_from_deck = function(self, card, from_debuff)
         PT_Twins_RemoveJokerSlots(card.ability.extra.Rank)
     end
