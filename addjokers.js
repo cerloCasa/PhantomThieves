@@ -2,14 +2,182 @@ let jokers = [
   {
     name: "The Contract",
     text: [
-      "{C:important}+1{} hand size,",
-      "each {C:red}Phantom Thieves",
-      "Joker you own",
-      "gives {C:xmult}X1.3{} Mult"
+      "{C:important}+1{} hand size, each {C:red}Phantom Thieves{} Joker you own gives {C:xmult}X1.3{} Mult"
     ],
     image_url: "img/j_joker.png",
     rarity: "Legendary"
-  }
+  },
+  {
+    name: "Zorro",
+    text: [
+      "Creates a random {C:planet}Planet{} card at the end of the round",
+      "{C:inactive}(Must have room)"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Uncommon"
+  },
+  {
+    name: "Johanna",
+    text: [
+      "Retriggers the {C:important}first{} scoring card"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Uncommon"
+  },
+  {
+    name: "Milady",
+    text: [
+      "Earn {C:important}$3{} at the end of the round"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Uncommon"
+  },
+  {
+    name: "Goemon",
+    text: [
+      "{C:green}1 in 3{} chance to duplicate {C:important}first hand{} of round if it has only {C:important}1{} card"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Uncommon"
+  },
+  {
+    name: "Chief",
+    text: [
+      "{C:chips}+20{} Chips for every other {C:red}Phantom Thieves{} Joker you own"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Carmen",
+    text: [
+      "When {C:important}Blind{} is selected, create one {C:common}common {C:red}Phantom Thieves {C:joker}Joker",
+      "{C:inactive}(Must have room)"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Rare"
+  },
+  {
+    name: "Captain Kidd",
+    text: [
+      "{C:green}1 in 2{} chance to upgrade level of played {C:important}poker hand"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Rare"
+  },
+  {
+    name: "Robin Hood",
+    text: [
+      "Create your most used {C:purple}Tarot{} at the end of the round"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Uncommon"
+  },
+  {
+    name: "Necronomicon",
+    text: [
+      "Create a random {C:purple}Tarot{} card at the end of the round"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Uncommon"
+  },
+  {
+    name: "Prophetess",
+    text: [
+      "{C:green}1 in 4{} chance to see the next card to draw"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Twins",
+    text: [
+      "{C:inactive}Does nothing..."
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Rare"
+  },
+  {
+    name: "Weapons Dealer",
+    text: [
+      "{C:green}1 in 5{} chance of adding a random enhancement to scoring cards"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Back Alley Doctor",
+    text: [
+      "{C:Chips}+20{} Chips per {C:purple}Tarot{} card used this run"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Teacher",
+    text: [
+      "Played cards give {C:chips}+20{} Chips when scored"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Paparazza",
+    text: [
+      "Reduce required chip score of {C:important}Blinds{} by 10%"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Skilled Gamer",
+    text: [
+      "{C:green}1 in 2{} chance of {C:blue}+1{} hand each round"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Shogi Player",
+    text: [
+      "{C:green}1 in 2{} chance of {C:red}+1{} discard each round"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Admin",
+    text: [
+      "{C:green}1 in 5{} chance of adding a random seal to scoring cards"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Man of the People",
+    text: [
+      "All cards and packs in shop cost {C:gold}$1{} less",
+      "{C:inactive}(Minimum {C:gold}$1{C:inactive})"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Prosecutor",
+    text: [
+      "{C:green}1 in 5{} chance of adding a random edition to scoring cards"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Common"
+  },
+  {
+    name: "Arsène",
+    text: [
+      "Copies the ability of {C:joker}Joker{} to the left"
+    ],
+    image_url: "img/j_joker.png",
+    rarity: "Rare"
+  },
 ]
 
 // works the same. 
