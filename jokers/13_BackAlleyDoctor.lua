@@ -19,9 +19,9 @@ SMODS.Joker { -- 13 Back Alley Doctor
 		info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Death', set = 'Other'}
 		if G.GAME.consumeable_usage_total then
 			if card.ability.extra.Rank < 7 then
-				return {vars = {PT_BackAlleyDoctorTable(card,'chips'),' per ','','','Tarot','card used this run.','','','(Currently ','+'..PT_BackAlleyDoctorTotal(card,'chips'),' Chips)','','','','','','',}}
+				return {vars = {PT_BackAlleyDoctor_Table(card,'chips'),' per ','','','Tarot','card used this run.','','','(Currently ','+'..PT_BackAlleyDoctor_Total(card,'chips'),' Chips)','','','','','','',}}
 			else
-				return {vars = {PT_BackAlleyDoctorTable(card,'chips'),' and ','+'..PT_BackAlleyDoctorTable(card,'mult'),' Mult','','per ','Tarot',' card','','','','used this run.','(Currently ','+'..PT_BackAlleyDoctorTotal(card,'chips'),' Chips and ','+'..PT_BackAlleyDoctorTotal(card,'mult'),' Mult)'}}
+				return {vars = {PT_BackAlleyDoctor_Table(card,'chips'),' and ','+'..PT_BackAlleyDoctor_Table(card,'mult'),' Mult','','per ','Tarot',' card','','','','used this run.','(Currently ','+'..PT_BackAlleyDoctor_Total(card,'chips'),' Chips and ','+'..PT_BackAlleyDoctor_Total(card,'mult'),' Mult)'}}
 			end
 		else
 			return {vars = {20,' per ','','','Tarot','card used this run.','','','(Currently ','+0',' Chips)','','','','','','',}}
@@ -45,18 +45,18 @@ SMODS.Joker { -- 13 Back Alley Doctor
 	calculate = function(self,card,context)
 		if context.joker_main then
 			if G.GAME.PTvar_mostUsedTarot_key then
-				if PT_BackAlleyDoctorTable(card,'mult') == 0 then
+				if PT_BackAlleyDoctor_Table(card,'mult') == 0 then
 					return {
-						message = localize{type='variable',key='a_chips',vars={PT_BackAlleyDoctorTotal(card,'chips')}},
-						chip_mod = PT_BackAlleyDoctorTotal(card,'chips'),
+						message = localize{type='variable',key='a_chips',vars={PT_BackAlleyDoctor_Total(card,'chips')}},
+						chip_mod = PT_BackAlleyDoctor_Total(card,'chips'),
 						colour = G.C.CHIPS
 					}
 				else
 					return {
-						message = localize{type='variable',key='a_chips',vars={PT_BackAlleyDoctorTotal(card,'chips')}},
-						chip_mod = PT_BackAlleyDoctorTotal(card,'chips'),
-						message = localize{type='variable',key='a_mult',vars={PT_BackAlleyDoctorTotal(card,'mult')}},
-						mult_mod = PT_BackAlleyDoctorTotal(card,'mult'),
+						message = localize{type='variable',key='a_chips',vars={PT_BackAlleyDoctor_Total(card,'chips')}},
+						chip_mod = PT_BackAlleyDoctor_Total(card,'chips'),
+						message = localize{type='variable',key='a_mult',vars={PT_BackAlleyDoctor_Total(card,'mult')}},
+						mult_mod = PT_BackAlleyDoctor_Total(card,'mult'),
 						colour = G.C.MULT
 					}
 				end
@@ -71,7 +71,7 @@ SMODS.Joker { -- 13 Back Alley Doctor
 	end
 }
 
-function PT_BackAlleyDoctorTable(card,string)
+function PT_BackAlleyDoctor_Table(card,string)
 	local rank = card.ability.extra.Rank
 	if string == 'chips' then
 		local first = 10*(rank - (rank % 2.4))/2.4
@@ -87,6 +87,6 @@ function PT_BackAlleyDoctorTable(card,string)
 	end
 end
 
-function PT_BackAlleyDoctorTotal(card,string)
-	return PT_BackAlleyDoctorTable(card,string) * G.GAME.consumeable_usage_total.tarot
+function PT_BackAlleyDoctor_Total(card,string)
+	return PT_BackAlleyDoctor_Table(card,string) * G.GAME.consumeable_usage_total.tarot
 end

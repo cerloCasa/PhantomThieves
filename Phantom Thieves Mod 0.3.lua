@@ -22,6 +22,9 @@ G.PhantomTheves_Vars = {
     -- 08 Robin Hood
 	PTvar_RobinHood_canBetrayalSpawn = false,
 	PTvar_RobinHood_roundCounter = 0,
+
+    -- 11 Twins
+    PTvar_Twins = true,
 }
 
 -- MODIFY VANILLA GAME FUNCTIONS
@@ -113,6 +116,7 @@ function PT_resetGlobalVars()
     G.GAME.PTvar_usefulTarots = {}
 	PT_Milady_resetGlobalVars()
 	PT_RobinHood_resetGlobalVars()
+    PT_Twins_resetGlobalVars()
 	sendTraceMessage("All global variables have been reset","PT_resetGlobalVars")
 end
 
