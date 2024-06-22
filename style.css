@@ -45,8 +45,11 @@ h1 {
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   justify-items: center;
-  width: 100%;
+  align-items: center; /* Aggiungi questa linea per centrare verticalmente gli elementi all'interno delle celle */
+  align-content: center; /* Aggiungi questa linea per centrare verticalmente le righe all'interno della griglia */
+  height: 100vh; /* Imposta l'altezza della griglia al 100% dell'altezza della finestra per centrare verticalmente */
 }
+
 /* .cards {
   display: flex;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
