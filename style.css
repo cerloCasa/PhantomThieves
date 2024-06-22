@@ -48,6 +48,7 @@ h1 {
   align-items: center; /* Aggiungi questa linea per centrare verticalmente gli elementi all'interno delle celle */
   align-content: center; /* Aggiungi questa linea per centrare verticalmente le righe all'interno della griglia */
   height: 100vh; /* Imposta l'altezza della griglia al 100% dell'altezza della finestra per centrare verticalmente */
+  margin: 0 auto; /* Centra la griglia nella pagina */
 }
 
 /* .cards {
