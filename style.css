@@ -66,6 +66,23 @@
     margin: 0.5em 0 0;
     color: #4f6367;
   }
+
+  .joker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    width: 15rem;
+  
+    background-color: #374244;
+  }
+  .joker img {
+    height: 190px;
+    image-rendering: pixelated;
+  }
   
   /* Section headings */
   .jokersfull h2,
