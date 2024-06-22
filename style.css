@@ -40,24 +40,24 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.cards {
+/* .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, 1fr);
   gap: 1rem;
   justify-items: center;
-  align-items: center; /* Aggiungi questa linea per centrare verticalmente gli elementi all'interno delle celle */
-  align-content: center; /* Aggiungi questa linea per centrare verticalmente le righe all'interno della griglia */
-  height: 100vh; /* Imposta l'altezza della griglia al 100% dell'altezza della finestra per centrare verticalmente */
-}
+  align-items: center; // Aggiungi questa linea per centrare verticalmente gli elementi all'interno delle celle 
+  align-content: center; // Aggiungi questa linea per centrare verticalmente le righe all'interno della griglia 
+  height: 100vh; // Imposta l'altezza della griglia al 100% dell'altezza della finestra per centrare verticalmente 
+} */
 
-/* .cards {
+.cards {
   display: flex;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   justify-content: center;
   flex: 1;
   gap: 1rem;
   flex-wrap: wrap;
-} */
+}
 
 .joker {
   display: flex;
