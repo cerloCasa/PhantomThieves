@@ -29,7 +29,7 @@ let jokers = [
     text: [
       "Earn {C:gold}$3{} at the end of the round"
     ],
-    image_url: "img/j_joker.png",
+    image_url: "img/j_Milady.png",
     rarity: "Uncommon"
   },
   {
