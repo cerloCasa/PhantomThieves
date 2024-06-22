@@ -57,7 +57,7 @@ SMODS.Joker { -- 11 Twins
 		end
 	end,
     remove_from_deck = function(self, card, from_debuff)
-        PT_Twins_RemoveJokerSlots(card.ability.extra.Rank)
+        PT_Twins_RemoveJokerSlots(card,card.ability.extra.Rank)
     end
 }
 
@@ -95,11 +95,11 @@ SMODS.Joker { -- 11.1 Lavenza
     end
 }
 
-function PT_Twins_resetGlobalVars(){
+function PT_Twins_resetGlobalVars()
 	G.GAME.PTvar_Twins = true
 	print("PTvarTwins = "..tostring(G.GAME.PTvar_Twins))
 	sendTraceMessage("Twins's variabiles have been reset","PT_Twins_resetGlobalVars")
-}
+end
 
 function PT_Twins_AddJokerSlots(rank)
     local jokerSlots = G.jokers.config.card_limit
@@ -112,14 +112,14 @@ function PT_Twins_AddJokerSlots(rank)
     G.jokers.config.card_limit = jokerSlots
 end
 
-function PT_Twins_RemoveJokerSlots(rank)
+function PT_Twins_RemoveJokerSlots(card,rank)
     if rank >= 3 then
         G.jokers.config.card_limit = G.jokers.config.card_limit - 1
     end
     if rank >= 7 then
         G.jokers.config.card_limit = G.jokers.config.card_limit - 1
     end
-    if rank == 10 then
-        G.jokers.config.card_limit = G.jokers.config.card_limit - 1
-    end
+	if card.config.center_key == "j_PT_Lavenza" then
+    	G.jokers.config.card_limit = G.jokers.config.card_limit - 3
+	end
 end
