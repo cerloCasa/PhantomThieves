@@ -42,12 +42,21 @@ h1 {
 
 .cards {
   display: flex;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   justify-content: center;
   flex: 1;
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+
+/* .cards {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  justify-content: center;
+  flex: 1;
+  gap: 1rem;
+  flex-wrap: wrap;
+} */
 .joker {
   display: flex;
   flex-direction: column;
