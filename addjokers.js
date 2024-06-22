@@ -70,7 +70,7 @@ let jokers = [
     text: [
       "Create your most used {C:purple}Tarot{} at the end of the round"
     ],
-    image_url: "img/j_joker.png",
+    image_url: "img/j_RobinHood.png",
     rarity: "Uncommon"
   },
   {
