@@ -8,7 +8,7 @@ SMODS.Joker { -- 11 Twins
 	},
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Strength', set = 'Other'}
-		if PTvar_Twins then
+		if G.GAME.PTvar_Twins then
 			if card.ability.extra.Rank < 3 then
 				return {vars = {
 					'Does nothing...','',''
@@ -41,7 +41,7 @@ SMODS.Joker { -- 11 Twins
 	discovered = false,
 	blueprint_compat = false,
 	eternal_compat = false,
-	perishable_compat = true,
+	perishable_compat = false,
 	linked_tarot = 'c_strength',
     calculate = function(self,card,context)
 		if context.using_consumeable then
@@ -85,7 +85,10 @@ SMODS.Joker { -- 11.1 Lavenza
 	discovered = false,
 	blueprint_compat = false,
 	eternal_compat = false,
-	perishable_compat = true,
+	perishable_compat = false,
+	add_to_pool = function(self)
+		return {add = false}
+	end,
 	linked_tarot = 'c_strength',
 	add_to_deck = function(self,card,from_debuff)
 		G.jokers.config.card_limit = G.jokers.config.card_limit + 3 
@@ -113,13 +116,15 @@ function PT_Twins_AddJokerSlots(rank)
 end
 
 function PT_Twins_RemoveJokerSlots(card,rank)
-    if rank >= 3 then
-        G.jokers.config.card_limit = G.jokers.config.card_limit - 1
-    end
-    if rank >= 7 then
-        G.jokers.config.card_limit = G.jokers.config.card_limit - 1
-    end
-	if card.config.center_key == "j_PT_Lavenza" then
-    	G.jokers.config.card_limit = G.jokers.config.card_limit - 3
+    if rank then
+		if rank >= 3 then
+			G.jokers.config.card_limit = G.jokers.config.card_limit - 1
+		end
+		if rank >= 7 then
+			G.jokers.config.card_limit = G.jokers.config.card_limit - 1
+		end
+		if card.config.center_key == "j_PT_Lavenza" then
+			G.jokers.config.card_limit = G.jokers.config.card_limit - 3
+		end
 	end
 end

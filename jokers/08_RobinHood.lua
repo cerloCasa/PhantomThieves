@@ -160,7 +160,7 @@ SMODS.Joker { -- 08.2 Hereward
 
 function PT_RobinHood_resetGlobalVars()
 	G.GAME.PTvar_RobinHood_canBetrayalSpawn = false
-	G.GAME.PTvar_RobinHood_canBetrayalSpawn = 0
+	G.GAME.PTvar_RobinHood_roundCounter = 0
 	print("canBetrayalSpawn = "..tostring(G.GAME.PTvar_RobinHood_canBetrayalSpawn))
 	sendTraceMessage("Robin Hood's variabiles have been reset","PT_RobinHood_resetGlobalVars")
 end
