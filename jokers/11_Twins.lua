@@ -67,6 +67,7 @@ SMODS.Joker { -- 11.1 Lavenza
 		['default'] = {
 			name = 'Lavenza',
 			text = {'{C:purple}+3{} Joker slots'},
+			unlock = {'{C:red}Evolve{} the previous','Joker to unlock','this one'},
 		},
 	},
     loc_vars = function(self, info_queue, card)
@@ -81,7 +82,7 @@ SMODS.Joker { -- 11.1 Lavenza
 	end,
 	atlas = 'Jokers',
 	cost = 10,
-	unlocked = true,
+	unlocked = false,
 	discovered = false,
 	blueprint_compat = false,
 	eternal_compat = false,
