@@ -10,7 +10,7 @@
 --- VERSION: 0.3
 _RELEASE_MODE = false
 
-G.PhantomTheves_Vars = {
+G.PhantomThieves_Vars = {
     PTvar_usedTarot = {},
     PTvar_mostUsedTarot_key = nil,
 	PTvar_mostUsedTarot_name = nil,
