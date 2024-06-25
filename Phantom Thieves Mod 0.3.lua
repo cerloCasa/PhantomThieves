@@ -1,5 +1,5 @@
 --- STEAMODDED HEADER
---- MOD_NAME: Phantom Thieves 0.3
+--- MOD_NAME: Phantom Thieves
 --- MOD_ID: PhantomThieves
 --- MOD_AUTHOR: [Cerlo]
 --- MOD_DESCRIPTION: A Persona 5 Mod
@@ -7,6 +7,7 @@
 --- PREFIX: PT
 --- PRIORITY: -1000000
 --- LOADER_VERSION_GEQ: 1.0.0
+--- VERSION: 0.3
 _RELEASE_MODE = false
 
 G.PhantomTheves_Vars = {
