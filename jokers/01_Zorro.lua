@@ -33,7 +33,7 @@ SMODS.Joker { -- 01 Zorro
         end
         if context.using_consumeable then
             -- Calcola Rank Up e Evoluzione
-            if context.consumeable.ability.name == 'The Magician' and card.ability.extra.Rank < 10 then
+            if context.consumeable.ability.name == 'The Magician' and card.ability.extra.Rank < 9 then
                 PT_rankUp(card)
             end
             if card.ability.extra.Rank == 9 then
