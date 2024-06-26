@@ -17,6 +17,9 @@ G.PhantomThieves_Vars = {
     PTvar_mostUsedTarot_N = 0,
     PTvar_usefulTarots = {},
 
+    -- 01 Zorro
+	PTvar_Zorro = true,
+
     -- 03 Milady
 	PTvar_Milady = {},
     
@@ -53,16 +56,37 @@ end
 
 function PT_createConsumable(key,set,edition,negative)
     if negative or (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
-        G.E_MANAGER:add_event(Event({
-            func = function() 
-                local _card = create_card(set,G.consumeables, nil, nil, nil, nil, key)
-                _card:add_to_deck()
-                if edition then
-                    _card:set_edition(edition, negative)
-                end
-                G.consumeables:emplace(_card)
-            return true;
-        end}))
+        if key == 'lastHandPlayed' then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    if G.GAME.last_hand_played then
+                        local _planet = 0
+                        for k, v in pairs(G.P_CENTER_POOLS.Planet) do
+                            if v.config.hand_type == G.GAME.last_hand_played then
+                                _planet = v.key
+                            end
+                        end
+                        local _card = create_card(set, G.consumeables, nil, nil, nil, nil, _planet)
+                        _card:add_to_deck()
+                        if edition then
+                            _card:set_edition(edition, negative)
+                        end
+                        G.consumeables:emplace(_card)
+                    end
+                    return true;
+                end}))
+        else
+            G.E_MANAGER:add_event(Event({
+                func = function() 
+                    local _card = create_card(set, G.consumeables, nil, nil, nil, nil, key)
+                    _card:add_to_deck()
+                    if edition then
+                        _card:set_edition(edition, negative)
+                    end
+                    G.consumeables:emplace(_card)
+                return true;
+            end}))
+        end
     else
         sendTraceMessage("No room for new consumable :/","PT_createConsumable")
     end
@@ -123,6 +147,7 @@ function PT_resetGlobalVars()
     G.GAME.PTvar_mostUsedTarot_key = nil
     G.GAME.PTvar_mostUsedTarot_name = nil
     G.GAME.PTvar_usefulTarots = {}
+    PT_Zorro_resetGlobalVars()
 	PT_Milady_resetGlobalVars()
 	PT_RobinHood_resetGlobalVars()
     PT_Twins_resetGlobalVars()

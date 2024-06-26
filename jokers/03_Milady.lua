@@ -48,6 +48,9 @@ SMODS.Joker { -- 03 Milady
 			if card.ability.extra.Rank == 9 then
 				PT_evolve(card,'j_PT_Astarte')
 			end
+			if card.ability.extra.Rank >= 10 then
+				PT_evolve(card,'j_PT_Lucy')
+			end
 		end
 	end
 }
@@ -102,7 +105,7 @@ SMODS.Joker { -- 03.1 Astarte
 			if context.consumeable.ability.name == 'The Empress' and card.ability.extra.Rank < 10 then
 				PT_rankUp(card)
 			end
-			if card.ability.extra.Rank == 10 then
+			if card.ability.extra.Rank >= 10 then
 				PT_evolve(card,'j_PT_Lucy')
 			end
 		end

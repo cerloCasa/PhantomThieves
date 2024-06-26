@@ -49,6 +49,9 @@ SMODS.Joker { -- 08 Robin Hood
 			if card.ability.extra.Rank == 9 then
 				PT_evolve(card,'j_PT_Loki')
 			end
+			if card.ability.extra.Rank >= 10 then
+				PT_evolve(card,'j_PT_Hereward')
+			end
 		end
 	end
 }
@@ -103,7 +106,7 @@ SMODS.Joker { -- 08.1 Loki
 			if context.consumeable.ability.name == 'Justice' then
 				PT_rankUp(card)
 			end
-			if card.ability.extra.Rank == 10 then
+			if card.ability.extra.Rank >= 10 then
 				PT_evolve(card,'j_PT_Hereward')
 			end
 		end
