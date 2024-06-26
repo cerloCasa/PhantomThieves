@@ -6,9 +6,9 @@ SMODS.Joker { -- 01 Zorro
             text = {'Jokers ability'},
         },
     },
-    -- loc_vars = function(self, info_queue, card)
-    --     return {vars = {}}
-    -- end,
+    loc_vars = function(self, info_queue, card)
+        return {vars = {}}
+    end,
     config = {extra = {Rank = 1}},
     rarity = 2, -- 1 common, 2 uncommon, 3 rare, 4 legendary
     pos = {x = 2, y = 0},
@@ -28,7 +28,7 @@ SMODS.Joker { -- 01 Zorro
         if context.joker_main then
             PT_Zorro_HandCalc(card,card.ability.extra.Rank)
         end
-        if context.end_of_round and context.game.over == false then
+        if context.end_of_round and context.game_over == false then
             PT_Zorro_RoundWon(card,card.ability.extra.Rank)
         end
         if context.using_consumeable then
