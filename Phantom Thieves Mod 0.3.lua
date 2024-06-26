@@ -106,6 +106,14 @@ function PT_reduceConsumeableArea(amount)
     end}))
 end
 
+function PT_random(prob,total)
+    -- This function returns true with a (prob) in (total) chance
+    if (math.random()) >= (prob/total) then
+        return true
+    end
+    return false
+end
+
 
 -- UTIL FUNCTIONS
 
@@ -190,6 +198,8 @@ function SMODS.current_mod.process_loc_text()
 end
 
 -- JOKERS
+
+load(NFS.read(SMODS.current_mod.path .. 'jokers/01_Zorro.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/03_Milady.lua'))()
 
