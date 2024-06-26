@@ -65,7 +65,7 @@ SMODS.Joker { -- 11.1 Lavenza
     key = 'Lavenza',
     loc_txt = {
 		['default'] = {
-			name = 'Lavenza',
+			name = '{C:blue}Lavenza',
 			text = {'{C:purple}+3{} Joker slots'},
 			unlock = {'{C:red}Evolve{} the previous','Joker to unlock','this one'},
 		},
