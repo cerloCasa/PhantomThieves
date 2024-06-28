@@ -132,7 +132,10 @@ end
 
 function PT_random(prob,total)
     -- This function returns true with a (prob) in (total) chance
-    if (math.random()) >= (prob/total) then
+    if (prob >= total) then
+        return true
+    end
+    if (math.random()) <= (prob/total) then
         return true
     end
     return false

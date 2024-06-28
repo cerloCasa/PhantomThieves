@@ -20,7 +20,7 @@ SMODS.Joker { -- 01 Zorro
             if card.ability.extra.Rank < 7 then
                 return {vars = {'Creates the ','Planet','','','card for played','','','','poker hand'}}
             end
-            return {vars = {'Creates the ','Planet ','card','','for played ','poker hand','1 in 3 ','chance to create two',''}}    
+            return {vars = {'Creates the ','Planet ','card','','for played ','poker hand',(G.GAME and G.GAME.probabilities.normal or 1) .. ' in 3 ','chance to create two',''}}    
         else
             return {vars = {'Creates a random ','','','Planet ','card at','','','the end of the round',''}}
         end
@@ -64,10 +64,13 @@ SMODS.Joker { -- 01.1 Mercurius
     loc_txt = {
         ['default'] = {
             name = '{C:blue}Mercurius',
-            text = {'Creates a {C:dark_edition}Negative','{C:blue}Planet{} card for','played {C:attention}poker hand','{C:green}1 in 3{} chance to create two'},
+            text = {'Creates a {C:dark_edition}Negative','{C:blue}Planet{} card for','played {C:attention}poker hand','{C:green}#1# in 3{} chance to create two'},
             unlock = {'{C:red}Evolve{} the previous','Joker to unlock','this one'},
         },
     },
+    loc_vars = function(self, info_queue, card)
+        return {vars = {""..(G.GAME and G.GAME.probabilities.normal or 1)}}
+    end,
     config = {extra = {Rank = 9}},
     rarity = 2, -- 1 common, 2 uncommon, 3 rare, 4 legendary
     pos = {x = 3, y = 0},
@@ -140,13 +143,13 @@ function PT_Zorro_HandCalc(card,rank)
         PT_createConsumable('lastHandPlayed','Planet',nil,nil)
     end
     if rank == 7 or rank == 8 then
-        if PT_random(1,3) then
+        if PT_random((G.GAME and G.GAME.probabilities.normal or 1),3) then
             PT_createConsumable('lastHandPlayed','Planet',nil,nil)
         end
     end
     if rank == 9 then
         PT_createConsumable('lastHandPlayed','Planet',{negative = true},true)
-        if PT_random(1,3) then
+        if PT_random((G.GAME and G.GAME.probabilities.normal or 1),3) then
             PT_createConsumable('lastHandPlayed','Planet',{negative = true},true)
         end
     end
