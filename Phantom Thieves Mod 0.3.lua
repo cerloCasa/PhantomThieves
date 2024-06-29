@@ -32,6 +32,12 @@ G.PhantomThieves_Vars = {
 
     -- 11 Twins
     PTvar_Twins = true,
+
+    --16 Skilled Gamer
+    PTvar_SkilledGamer = true,
+
+    --17 Shogi Player
+    PTvar_ShogiPlayer = true,
 }
 
 -- MODIFY VANILLA GAME FUNCTIONS
@@ -40,6 +46,7 @@ local vanilla_Back_apply_to_run = Back.apply_to_run
 function Back.apply_to_run(self)
 	vanilla_Back_apply_to_run(self)
 	PT_resetGlobalVars()
+    PT_expandConsumeableArea(100)
 	return true
 end
 
@@ -162,6 +169,8 @@ function PT_resetGlobalVars()
     PT_CaptainKidd_resetGlobalVars()
 	PT_RobinHood_resetGlobalVars()
     PT_Twins_resetGlobalVars()
+    PT_SkilledGamer_resetGlobalVars()
+    PT_ShogiPlayer_resetGlobalVars()
 	sendTraceMessage("All global variables have been reset","PT_resetGlobalVars")
 end
 
@@ -226,6 +235,14 @@ function SMODS.current_mod.process_loc_text()
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Death Tarot','to {C:red}rank up{} this Joker'}
 	}
+	G.localization.descriptions.Other['PT_LinkedTarot_Tower'] = {
+		name = 'Linked Tarot',
+		text = {'Use the {C:purple}Tower Tarot','to {C:red}rank up{} this Joker'}
+	}
+	G.localization.descriptions.Other['PT_LinkedTarot_Star'] = {
+		name = 'Linked Tarot',
+		text = {'Use the {C:purple}Star Tarot','to {C:red}rank up{} this Joker'}
+	}
 	G.localization.descriptions.Other['PT_RobinHood_MostUsedTarot'] = {
 		name = 'Most used Tarot',
 		text = {'Currently the most used','{C:purple}Tarot{} is {C:purple}#1#'}
@@ -250,6 +267,10 @@ load(NFS.read(SMODS.current_mod.path .. 'jokers/08_RobinHood.lua'))()
 load(NFS.read(SMODS.current_mod.path .. 'jokers/11_Twins.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/13_BackAlleyDoctor.lua'))()
+
+load(NFS.read(SMODS.current_mod.path .. 'jokers/16_SkilledGamer.lua'))()
+
+load(NFS.read(SMODS.current_mod.path .. 'jokers/17_ShogiPlayer.lua'))()
 
 -- CONSUMEABLES
 
