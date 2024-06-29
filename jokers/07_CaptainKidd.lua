@@ -49,7 +49,7 @@ SMODS.Joker { -- 07 Captain Kidd
             if context.consumeable.ability.name == 'The Chariot' and card.ability.extra.Rank < 10 then
                 PT_rankUp(card)
             end
-            if card.ability.extra.Rank == 9 then
+            if not context.blueprint and card.ability.extra.Rank == 9 then
                 PT_evolve(card,'j_PT_SeitenTaisei')
             end
             if not context.blueprint and card.ability.extra.Rank >= 10 then

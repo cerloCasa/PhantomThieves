@@ -49,7 +49,7 @@ SMODS.Joker { -- 01 Zorro
             if context.consumeable.ability.name == 'The Magician' and card.ability.extra.Rank < 9 then
                 PT_rankUp(card)
             end
-            if card.ability.extra.Rank == 9 then
+            if not context.blueprint and card.ability.extra.Rank == 9 then
                 PT_evolve(card,'j_PT_Mercurius')
             end
             if not context.blueprint and card.ability.extra.Rank >= 10 then
