@@ -21,7 +21,8 @@ SMODS.Joker { -- 03 Milady
 		end
 	end,
 	rarity = 2,
-	pos = {x = 8, y = 0},soul_pos = {x = 3, y = 3},
+	pos = {x = 8, y = 0},
+	soul_pos = {x = 3, y = 3},
 	set_ability = function(self, card)
 		PT_soulPos(card)
 	end,
@@ -48,7 +49,7 @@ SMODS.Joker { -- 03 Milady
 			if card.ability.extra.Rank == 9 then
 				PT_evolve(card,'j_PT_Astarte')
 			end
-			if card.ability.extra.Rank >= 10 then
+            if not context.blueprint and card.ability.extra.Rank >= 10 then
 				PT_evolve(card,'j_PT_Lucy')
 			end
 		end
@@ -105,7 +106,7 @@ SMODS.Joker { -- 03.1 Astarte
 			if context.consumeable.ability.name == 'The Empress' and card.ability.extra.Rank < 10 then
 				PT_rankUp(card)
 			end
-			if card.ability.extra.Rank >= 10 then
+            if not context.blueprint and card.ability.extra.Rank >= 10 then
 				PT_evolve(card,'j_PT_Lucy')
 			end
 		end

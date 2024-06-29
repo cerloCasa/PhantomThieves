@@ -22,6 +22,9 @@ G.PhantomThieves_Vars = {
 
     -- 03 Milady
 	PTvar_Milady = {},
+
+    -- 07 Captain Kidd
+    PTvar_CaptainKidd = true,
     
     -- 08 Robin Hood
 	PTvar_RobinHood_canBetrayalSpawn = false,
@@ -132,12 +135,16 @@ end
 
 function PT_random(prob,total)
     -- This function returns true with a (prob) in (total) chance
+    prob = prob * (G.GAME and G.GAME.probabilities.normal or 1)
     if (prob >= total) then
+        print("PROB: "..prob.." in "..total.." is FORCED TRUE")
         return true
     end
     if (math.random()) <= (prob/total) then
+        print("PROB: "..prob.." in "..total.." is TRUE")
         return true
     end
+    print("PROB: "..prob.." in "..total.." is FALSE")
     return false
 end
 
@@ -152,6 +159,7 @@ function PT_resetGlobalVars()
     G.GAME.PTvar_usefulTarots = {}
     PT_Zorro_resetGlobalVars()
 	PT_Milady_resetGlobalVars()
+    PT_CaptainKidd_resetGlobalVars()
 	PT_RobinHood_resetGlobalVars()
     PT_Twins_resetGlobalVars()
 	sendTraceMessage("All global variables have been reset","PT_resetGlobalVars")
@@ -206,6 +214,10 @@ function SMODS.current_mod.process_loc_text()
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Empress Tarot','to {C:red}rank up{} this Joker'}
 	}
+    G.localization.descriptions.Other['PT_LinkedTarot_Chariot'] = {
+		name = 'Linked Tarot',
+		text = {'Use the {C:purple}Chariot Tarot','to {C:red}rank up{} this Joker'}
+	}
 	G.localization.descriptions.Other['PT_LinkedTarot_Strength'] = {
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Strength Tarot','to {C:red}rank up{} this Joker'}
@@ -230,6 +242,8 @@ end
 load(NFS.read(SMODS.current_mod.path .. 'jokers/01_Zorro.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/03_Milady.lua'))()
+
+load(NFS.read(SMODS.current_mod.path .. 'jokers/07_CaptainKidd.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/08_RobinHood.lua'))()
 

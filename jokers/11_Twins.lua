@@ -48,7 +48,7 @@ SMODS.Joker { -- 11 Twins
 			-- Rank Up
 			if context.consumeable.ability.name == 'Strength' and card.ability.extra.Rank < 10 then
 				PT_rankUp(card)
-				if card.ability.extra.Rank >= 10 then
+				if not context.blueprint and card.ability.extra.Rank >= 10 then
 					PT_evolve(card,'j_PT_Lavenza')
 				else
                 	PT_Twins_AddJokerSlots(card.ability.extra.Rank)

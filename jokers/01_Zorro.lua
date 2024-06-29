@@ -52,7 +52,7 @@ SMODS.Joker { -- 01 Zorro
             if card.ability.extra.Rank == 9 then
                 PT_evolve(card,'j_PT_Mercurius')
             end
-            if card.ability.extra.Rank >= 10 then
+            if not context.blueprint and card.ability.extra.Rank >= 10 then
                 PT_evolve(card,'j_PT_Diego')
             end
         end
@@ -95,7 +95,7 @@ SMODS.Joker { -- 01.1 Mercurius
             if context.consumeable.ability.name == 'The Magician' and card.ability.extra.Rank < 10 then
                 PT_rankUp(card)
             end
-            if card.ability.extra.Rank >= 10 then
+            if not context.blueprint and card.ability.extra.Rank >= 10 then
                 PT_evolve(card,'j_PT_Diego')
             end
         end
@@ -143,13 +143,13 @@ function PT_Zorro_HandCalc(card,rank)
         PT_createConsumable('lastHandPlayed','Planet',nil,nil)
     end
     if rank == 7 or rank == 8 then
-        if PT_random((G.GAME and G.GAME.probabilities.normal or 1),3) then
+        if PT_random(1,3) then
             PT_createConsumable('lastHandPlayed','Planet',nil,nil)
         end
     end
     if rank == 9 then
         PT_createConsumable('lastHandPlayed','Planet',{negative = true},true)
-        if PT_random((G.GAME and G.GAME.probabilities.normal or 1),3) then
+        if PT_random(1,3) then
             PT_createConsumable('lastHandPlayed','Planet',{negative = true},true)
         end
     end
