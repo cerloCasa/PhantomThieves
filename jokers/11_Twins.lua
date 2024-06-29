@@ -51,13 +51,13 @@ SMODS.Joker { -- 11 Twins
 				if not context.blueprint and card.ability.extra.Rank >= 10 then
 					PT_evolve(card,'j_PT_Lavenza')
 				else
-                	PT_Twins_AddJokerSlots(card.ability.extra.Rank)
-				end            
+					PT_Twins_AddJokerSlots(card.ability.extra.Rank)
+				end       
 			end
 		end
 	end,
     remove_from_deck = function(self, card, from_debuff)
-        PT_Twins_RemoveJokerSlots(card,card.ability.extra.Rank)
+		PT_Twins_RemoveJokerSlots(card,card.ability.extra.Rank)
     end,
 }
 
@@ -92,10 +92,10 @@ SMODS.Joker { -- 11.1 Lavenza
 	end,
 	linked_tarot = 'c_strength',
 	add_to_deck = function(self,card,from_debuff)
-		G.jokers.config.card_limit = G.jokers.config.card_limit + 3 
+		G.jokers.config.card_limit = G.jokers.config.card_limit + 3
 	end,
     remove_from_deck = function(self, card, from_debuff)
-        G.jokers.config.card_limit = G.jokers.config.card_limit - 3 
+        G.jokers.config.card_limit = G.jokers.config.card_limit - 3
     end,
 }
 
