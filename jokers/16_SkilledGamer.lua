@@ -39,7 +39,7 @@ SMODS.Joker { -- 16 Skilled Gamer
     perishable_compat = true,
     linked_tarot = 'c_tower',
     calculate = function(self,card,context)
-        if context.setting_blind and not context.blueprint then
+        if context.setting_blind and not context.blueprint and not self.getting_sliced then
             PT_SkilledGamer_RoundStart(card,card.ability.extra.Rank)
         end
         if context.using_consumeable then

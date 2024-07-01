@@ -23,6 +23,9 @@ G.PhantomThieves_Vars = {
     -- 03 Milady
 	PTvar_Milady = {},
 
+    -- 04 Goemon
+    PTvar_Goemon = true,
+
     -- 07 Captain Kidd
     PTvar_CaptainKidd = true,
     
@@ -46,7 +49,6 @@ local vanilla_Back_apply_to_run = Back.apply_to_run
 function Back.apply_to_run(self)
 	vanilla_Back_apply_to_run(self)
 	PT_resetGlobalVars()
-    PT_expandConsumeableArea(100)
 	return true
 end
 
@@ -166,6 +168,7 @@ function PT_resetGlobalVars()
     G.GAME.PTvar_usefulTarots = {}
     PT_Zorro_resetGlobalVars()
 	PT_Milady_resetGlobalVars()
+	PT_Goemon_resetGlobalVars()
     PT_CaptainKidd_resetGlobalVars()
 	PT_RobinHood_resetGlobalVars()
     PT_Twins_resetGlobalVars()
@@ -223,6 +226,10 @@ function SMODS.current_mod.process_loc_text()
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Empress Tarot','to {C:red}rank up{} this Joker'}
 	}
+	G.localization.descriptions.Other['PT_LinkedTarot_Emperor'] = {
+		name = 'Linked Tarot',
+		text = {'Use the {C:purple}Emperor Tarot','to {C:red}rank up{} this Joker'}
+	}
     G.localization.descriptions.Other['PT_LinkedTarot_Chariot'] = {
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Chariot Tarot','to {C:red}rank up{} this Joker'}
@@ -259,6 +266,8 @@ end
 load(NFS.read(SMODS.current_mod.path .. 'jokers/01_Zorro.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/03_Milady.lua'))()
+
+load(NFS.read(SMODS.current_mod.path .. 'jokers/04_Goemon.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/07_CaptainKidd.lua'))()
 

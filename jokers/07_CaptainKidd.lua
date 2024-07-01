@@ -41,8 +41,8 @@ SMODS.Joker { -- 07 Captain Kidd
     perishable_compat = true,
     linked_tarot = 'c_chariot',
     calculate = function(self,card,context)
-        if context.joker_main then
-            PT_CaptainKidd_HandCalc(card,card.ability.extra.Rank)
+        if context.cardarea == G.jokers and context.before then
+            PT_CaptainKidd_BeforeHandCalc(card,card.ability.extra.Rank)
         end
         if context.using_consumeable then
             -- Calcola Rank Up e Evoluzione
@@ -90,8 +90,8 @@ SMODS.Joker { -- 07.1 Seiten Taisei
 	end,
     linked_tarot = 'c_chariot',
     calculate = function(self,card,context)
-        if context.joker_main then
-            PT_CaptainKidd_HandCalc(card,card.ability.extra.Rank)
+        if context.cardarea == G.jokers and context.before then
+            PT_CaptainKidd_BeforeHandCalc(card,card.ability.extra.Rank)
         end
         if context.using_consumeable then
             -- Calcola Rank Up e Evoluzione
@@ -136,8 +136,8 @@ SMODS.Joker { -- 07.2 William
 	end,
     linked_tarot = 'c_chariot',
     calculate = function(self,card,context)
-        if context.joker_main then
-            PT_CaptainKidd_HandCalc(card,card.ability.extra.Rank)
+        if context.cardarea == G.jokers and context.before then
+            PT_CaptainKidd_BeforeHandCalc(card,card.ability.extra.Rank)
         end
     end,
 }
@@ -146,7 +146,7 @@ function PT_CaptainKidd_resetGlobalVars()
     G.GAME.PTvar_CaptainKidd = true
 end
 
-function PT_CaptainKidd_HandCalc(card,rank)
+function PT_CaptainKidd_BeforeHandCalc(card,rank)
     if rank == 1 or rank == 2 then
         if PT_random(1,2) then
             level_up_hand(card, G.GAME.last_hand_played, nil, 1)

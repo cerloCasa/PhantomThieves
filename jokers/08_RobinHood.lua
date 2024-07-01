@@ -35,7 +35,7 @@ SMODS.Joker { -- 08 Robin Hood
 	perishable_compat = true,
 	linked_tarot = 'c_justice',
 	calculate = function(self,card,context)
-		if context.setting_blind then
+		if context.setting_blind and not self.getting_sliced then
 			PT_RobinHood_RoundStart(card,card.ability.extra.Rank)
 		end
 		if context.end_of_round and context.game_over == false then
@@ -95,7 +95,7 @@ SMODS.Joker { -- 08.1 Loki
 	end,
 	linked_tarot = 'c_justice',
 	calculate = function(self,card,context)
-		if context.setting_blind then
+		if context.setting_blind and not self.getting_sliced then
 			PT_RobinHood_RoundStart(card,card.ability.extra.Rank)
 		end
 		if context.end_of_round and context.game_over == false then
@@ -152,7 +152,7 @@ SMODS.Joker { -- 08.2 Hereward
 	end,
 	linked_tarot = 'c_justice',
 	calculate = function(self,card,context)
-		if context.setting_blind then
+		if context.setting_blind and not self.getting_sliced then
 			PT_RobinHood_RoundStart(card,card.ability.extra.Rank)
 		end
 		if context.end_of_round and context.game_over == false then
@@ -175,11 +175,13 @@ function PT_RobinHood_RoundStart(card,rank)
     if rank < 9 then
         G.GAME.PTvar_RobinHood_roundCounter = G.GAME.PTvar_RobinHood_roundCounter + 1
     end
+	print("RobinHood's roundCounter is "..G.GAME.PTvar_RobinHood_roundCounter)
 end
 
 function PT_RobinHood_RoundWon(card,rank)
     if G.GAME.PTvar_RobinHood_roundCounter >= 5 then
         PTvar_RobinHood_canBetrayalSpawn = true
+		print("WATCH OUT: BETRAYAL WILL SPAWN!")
     end
     if rank < 9 then
 	    PT_RobinHood_createMostUsedTarot()
