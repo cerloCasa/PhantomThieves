@@ -7,7 +7,7 @@
 --- PREFIX: PT
 --- PRIORITY: -1000000
 --- LOADER_VERSION_GEQ: 1.0.0
---- VERSION: 0.3
+--- VERSION: 0.3.3
 
 G.PhantomThieves_Vars = {
     PTvar_usedTarot = {},
