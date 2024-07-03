@@ -8,7 +8,7 @@ SMODS.Joker { -- 16 Skilled Gamer
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Tower', set = 'Other'}
-        if G.GAME.PTvar_SkilledGamer then
+        if card and card.ability and card.ability.extra and card.ability.extra.Rank then
             if card.ability.extra.Rank <= 2 then
                 return {vars = {(G.GAME and G.GAME.probabilities.normal or 1)..' in 2 ','','chance of', '+1 ','hand each round'}}
             end
@@ -50,10 +50,6 @@ SMODS.Joker { -- 16 Skilled Gamer
         end
     end,
 }
-
-function PT_SkilledGamer_resetGlobalVars()
-    G.GAME.PTvar_SkilledGamer = true
-end
 
 function PT_SkilledGamer_RoundStart(card,rank)
     if rank <= 2 and PT_random(1,2) then

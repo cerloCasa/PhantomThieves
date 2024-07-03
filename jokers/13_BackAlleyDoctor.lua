@@ -45,20 +45,9 @@ SMODS.Joker { -- 13 Back Alley Doctor
 	calculate = function(self,card,context)
 		if context.joker_main then
 			if G.GAME.PTvar_mostUsedTarot_key then
-				if PT_BackAlleyDoctor_Table(card,'mult') == 0 then
-					return {
-						message = localize{type='variable',key='a_chips',vars={PT_BackAlleyDoctor_Total(card,'chips')}},
-						chip_mod = PT_BackAlleyDoctor_Total(card,'chips'),
-						colour = G.C.CHIPS
-					}
-				else
-					return {
-						message = localize{type='variable',key='a_chips',vars={PT_BackAlleyDoctor_Total(card,'chips')}},
-						chip_mod = PT_BackAlleyDoctor_Total(card,'chips'),
-						message = localize{type='variable',key='a_mult',vars={PT_BackAlleyDoctor_Total(card,'mult')}},
-						mult_mod = PT_BackAlleyDoctor_Total(card,'mult'),
-						colour = G.C.MULT
-					}
+				aChips(PT_BackAlleyDoctor_Total(card,'chips'),card,context)
+				if PT_BackAlleyDoctor_Total(card,'mult') > 0 then
+					aMult(PT_BackAlleyDoctor_Total(card,'mult'),card,context)
 				end
 			end
 		end

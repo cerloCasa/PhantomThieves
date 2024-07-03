@@ -8,7 +8,7 @@ SMODS.Joker { -- 04 Goemon
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Emperor', set = 'Other'}
-        if G.GAME.PTvar_Goemon then
+        if card and card.ability and card.ability.extra and card.ability.extra.Rank then
             if card.ability.extra.Rank <= 3 then
                 return {vars = {(G.GAME and G.GAME.probabilities.normal or 1).." in 3 ","chance to","","","duplicate ","first hand ","of","round if it has","only ","1 ","card"}}
             elseif card.ability.extra.Rank <= 6 then
@@ -136,10 +136,6 @@ SMODS.Joker { -- 04.2 Gorokichi
         end
     end,
 }
-
-function PT_Goemon_resetGlobalVars()
-    G.GAME.PTvar_Goemon = true
-end
 
 function PT_Goemon_HandCalc(card,rank,context)
     if #context.full_hand == 1 and G.GAME.current_round.hands_played == 0 then

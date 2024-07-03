@@ -8,7 +8,6 @@
 --- PRIORITY: -1000000
 --- LOADER_VERSION_GEQ: 1.0.0
 --- VERSION: 0.3
-_RELEASE_MODE = false
 
 G.PhantomThieves_Vars = {
     PTvar_usedTarot = {},
@@ -17,30 +16,12 @@ G.PhantomThieves_Vars = {
     PTvar_mostUsedTarot_N = 0,
     PTvar_usefulTarots = {},
 
-    -- 01 Zorro
-	PTvar_Zorro = true,
-
     -- 03 Milady
 	PTvar_Milady = {},
-
-    -- 04 Goemon
-    PTvar_Goemon = true,
-
-    -- 07 Captain Kidd
-    PTvar_CaptainKidd = true,
     
     -- 08 Robin Hood
 	PTvar_RobinHood_canBetrayalSpawn = false,
 	PTvar_RobinHood_roundCounter = 0,
-
-    -- 11 Twins
-    PTvar_Twins = true,
-
-    --16 Skilled Gamer
-    PTvar_SkilledGamer = true,
-
-    --17 Shogi Player
-    PTvar_ShogiPlayer = true,
 }
 
 -- MODIFY VANILLA GAME FUNCTIONS
@@ -58,7 +39,6 @@ G.FUNCS.use_card = function(e,mute,nosave)
     local card = e.config.ref_table
     if card.ability.consumeable then
         if (card.ability.set == 'Tarot') then
-            sendTraceMessage("Calling tarotUsed function","PT_use_card")
             PT_tarotUsed(card)
         end
     end
@@ -149,7 +129,7 @@ function PT_random(prob,total)
         print("PROB: "..prob.." in "..total.." is FORCED TRUE")
         return true
     end
-    if (math.random()) <= (prob/total) then
+    if (pseudorandom('PT')) <= (prob/total) then
         print("PROB: "..prob.." in "..total.." is TRUE")
         return true
     end
@@ -166,14 +146,8 @@ function PT_resetGlobalVars()
     G.GAME.PTvar_mostUsedTarot_key = nil
     G.GAME.PTvar_mostUsedTarot_name = nil
     G.GAME.PTvar_usefulTarots = {}
-    PT_Zorro_resetGlobalVars()
 	PT_Milady_resetGlobalVars()
-	PT_Goemon_resetGlobalVars()
-    PT_CaptainKidd_resetGlobalVars()
 	PT_RobinHood_resetGlobalVars()
-    PT_Twins_resetGlobalVars()
-    PT_SkilledGamer_resetGlobalVars()
-    PT_ShogiPlayer_resetGlobalVars()
 	sendTraceMessage("All global variables have been reset","PT_resetGlobalVars")
 end
 
@@ -196,8 +170,10 @@ end
 
 function PT_rankUp(card) 
     card.ability.extra.Rank = card.ability.extra.Rank + 1
+    if card.ability.extra.Rank > 10 then
+        card.ability.extra.Rank = 10
+    end
 	PT_soulPos(card)
-    sendTraceMessage("New rank is " .. card.ability.extra.Rank,card.config.center_key)
 end
 
 function PT_soulPos(card)
@@ -206,34 +182,41 @@ function PT_soulPos(card)
 end
 
 function PT_tarotUsed(tarot)
-    sendTraceMessage("Adding "..tarot.config.center_key.." to the table","PT_tarotUsed")
     G.GAME.PTvar_usedTarot[tarot.config.center_key] = (G.GAME.PTvar_usedTarot[tarot.config.center_key] or 0) + 1
-    sendTraceMessage(tarot.config.center_key.." has been used "..G.GAME.PTvar_usedTarot[tarot.config.center_key].." times","PT_tarotUsed")
-    if G.GAME.PTvar_usedTarot[tarot.config.center_key] > G.GAME.PTvar_mostUsedTarot_N then
+    if G.GAME.PTvar_usedTarot[tarot.config.center_key] >= G.GAME.PTvar_mostUsedTarot_N then
         G.GAME.PTvar_mostUsedTarot_key = tarot.config.center_key
 		G.GAME.PTvar_mostUsedTarot_name = tarot.ability.name
         G.GAME.PTvar_mostUsedTarot_N = G.GAME.PTvar_usedTarot[tarot.config.center_key]
     end
-    sendTraceMessage("The most used Tarot is now "..G.GAME.PTvar_mostUsedTarot_key.." with "..G.GAME.PTvar_mostUsedTarot_N.." uses","PT_tarotUsed")
+    print("usedTarot = "..tprint(G.GAME.PTvar_usedTarot))
+    print("The most used Tarot is now "..G.GAME.PTvar_mostUsedTarot_key)
 end
 
 function SMODS.current_mod.process_loc_text()
-	G.localization.descriptions.Other['PT_LinkedTarot_Justice'] = {
-		name = 'Linked Tarot',
-		text = {'Use the {C:purple}Justice Tarot','to {C:red}rank up{} this Joker'}
+	G.localization.descriptions.Other['PT_LinkedTarot_Magician'] = {
+        name = 'Linked Tarot',
+		text = {'Use the {C:purple}Magician Tarot','to {C:red}rank up{} this Joker'}
+	}
+	G.localization.descriptions.Other['PT_LinkedTarot_HighPriestess'] = {
+        name = 'Linked Tarot',
+		text = {'Use the {C:purple}High Priestess Tarot','to {C:red}rank up{} this Joker'}
 	}
 	G.localization.descriptions.Other['PT_LinkedTarot_Empress'] = {
-		name = 'Linked Tarot',
+        name = 'Linked Tarot',
 		text = {'Use the {C:purple}Empress Tarot','to {C:red}rank up{} this Joker'}
 	}
 	G.localization.descriptions.Other['PT_LinkedTarot_Emperor'] = {
-		name = 'Linked Tarot',
+        name = 'Linked Tarot',
 		text = {'Use the {C:purple}Emperor Tarot','to {C:red}rank up{} this Joker'}
 	}
     G.localization.descriptions.Other['PT_LinkedTarot_Chariot'] = {
-		name = 'Linked Tarot',
+        name = 'Linked Tarot',
 		text = {'Use the {C:purple}Chariot Tarot','to {C:red}rank up{} this Joker'}
 	}
+    G.localization.descriptions.Other['PT_LinkedTarot_Justice'] = {
+        name = 'Linked Tarot',
+        text = {'Use the {C:purple}Justice Tarot','to {C:red}rank up{} this Joker'}
+    }
 	G.localization.descriptions.Other['PT_LinkedTarot_Strength'] = {
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Strength Tarot','to {C:red}rank up{} this Joker'}
@@ -241,6 +224,10 @@ function SMODS.current_mod.process_loc_text()
 	G.localization.descriptions.Other['PT_LinkedTarot_Death'] = {
 		name = 'Linked Tarot',
 		text = {'Use the {C:purple}Death Tarot','to {C:red}rank up{} this Joker'}
+	}
+	G.localization.descriptions.Other['PT_LinkedTarot_Temperance'] = {
+		name = 'Linked Tarot',
+		text = {'Use the {C:purple}Temperance Tarot','to {C:red}rank up{} this Joker'}
 	}
 	G.localization.descriptions.Other['PT_LinkedTarot_Tower'] = {
 		name = 'Linked Tarot',
@@ -265,6 +252,8 @@ end
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/01_Zorro.lua'))()
 
+load(NFS.read(SMODS.current_mod.path .. 'jokers/02_Johanna.lua'))()
+
 load(NFS.read(SMODS.current_mod.path .. 'jokers/03_Milady.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/04_Goemon.lua'))()
@@ -276,6 +265,8 @@ load(NFS.read(SMODS.current_mod.path .. 'jokers/08_RobinHood.lua'))()
 load(NFS.read(SMODS.current_mod.path .. 'jokers/11_Twins.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/13_BackAlleyDoctor.lua'))()
+
+load(NFS.read(SMODS.current_mod.path .. 'jokers/14_Teacher.lua'))()
 
 load(NFS.read(SMODS.current_mod.path .. 'jokers/16_SkilledGamer.lua'))()
 

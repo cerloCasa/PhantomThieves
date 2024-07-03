@@ -10,7 +10,8 @@ SMODS.Joker { -- 01 Zorro
         },
     },
     loc_vars = function(self, info_queue, card)
-        if G.GAME.PTvar_Zorro then
+        info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Magician', set = 'Other'}
+        if card and card.ability and card.ability.extra and card.ability.extra.Rank then
             if card.ability.extra.Rank < 3 then
                 return {vars = {'Creates a random ','','','Planet ','card at','','','the end of the round',''}}
             end
@@ -69,6 +70,7 @@ SMODS.Joker { -- 01.1 Mercurius
         },
     },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Magician', set = 'Other'}
         return {vars = {""..(G.GAME and G.GAME.probabilities.normal or 1)}}
     end,
     config = {extra = {Rank = 9}},
@@ -111,6 +113,9 @@ SMODS.Joker { -- 01.2 Diego
             unlock = {'{C:red}Evolve{} the previous','Joker to unlock','this one'},
         },
     },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Magician', set = 'Other'}
+    end,
     config = {extra = {Rank = 10}},
     rarity = 2, -- 1 common, 2 uncommon, 3 rare, 4 legendary
     pos = {x = 4, y = 0},
@@ -132,11 +137,6 @@ SMODS.Joker { -- 01.2 Diego
         end
     end,
 }
-
-function PT_Zorro_resetGlobalVars()
-	G.GAME.PTvar_Zorro = true
-	sendTraceMessage("Zorro's variabiles have been reset","PT_Zorro_resetGlobalVars")
-end
 
 function PT_Zorro_HandCalc(card,rank)
     if rank > 4 and rank < 9 then

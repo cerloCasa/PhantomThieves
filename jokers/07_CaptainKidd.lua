@@ -8,7 +8,7 @@ SMODS.Joker { -- 07 Captain Kidd
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Chariot', set = 'Other'}
-        if G.GAME.PTvar_CaptainKidd then
+        if card and card.ability and card.ability.extra and card.ability.extra.Rank then
             if card.ability.extra.Rank <= 2 then
                 return {vars = {(G.GAME and G.GAME.probabilities.normal or 1)..' in 2 ','chance to ','upgrade level of','','','played ','poker hand',''}}
             end
@@ -141,10 +141,6 @@ SMODS.Joker { -- 07.2 William
         end
     end,
 }
-
-function PT_CaptainKidd_resetGlobalVars()
-    G.GAME.PTvar_CaptainKidd = true
-end
 
 function PT_CaptainKidd_BeforeHandCalc(card,rank)
     if rank == 1 or rank == 2 then

@@ -8,7 +8,7 @@ SMODS.Joker { -- 17 Shogi Player
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Star', set = 'Other'}
-        if G.GAME.PTvar_ShogiPlayer then
+        if card and card.ability and card.ability.extra and card.ability.extra.Rank then
             if card.ability.extra.Rank <= 2 then
                 return {vars = {(G.GAME and G.GAME.probabilities.normal or 1)..' in 2 ','','chance of', '+1 ','discard each round'}}
             end
@@ -50,10 +50,6 @@ SMODS.Joker { -- 17 Shogi Player
         end
     end,
 }
-
-function PT_ShogiPlayer_resetGlobalVars()
-    G.GAME.PTvar_ShogiPlayer = true
-end
 
 function PT_ShogiPlayer_RoundStart(card,rank)
     if rank <= 2 and PT_random(1,2) then

@@ -8,7 +8,7 @@ SMODS.Joker { -- 11 Twins
 	},
     loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot_Strength', set = 'Other'}
-		if G.GAME.PTvar_Twins then
+		if card and card.ability and card.ability.extra and card.ability.extra.Rank then
 			if card.ability.extra.Rank < 3 then
 				return {vars = {
 					'Does nothing...','',''
@@ -98,12 +98,6 @@ SMODS.Joker { -- 11.1 Lavenza
         G.jokers.config.card_limit = G.jokers.config.card_limit - 3
     end,
 }
-
-function PT_Twins_resetGlobalVars()
-	G.GAME.PTvar_Twins = true
-	print("PTvarTwins = "..tostring(G.GAME.PTvar_Twins))
-	sendTraceMessage("Twins's variabiles have been reset","PT_Twins_resetGlobalVars")
-end
 
 function PT_Twins_AddJokerSlots(rank)
     local jokerSlots = G.jokers.config.card_limit

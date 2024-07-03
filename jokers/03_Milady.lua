@@ -173,7 +173,7 @@ function PT_Milady_resetGlobalVars()
     G.GAME.PTvar_Milady[8] = 15
     G.GAME.PTvar_Milady[9] = 15
     G.GAME.PTvar_Milady[10] = 20
-	sendTraceMessage("Milady's variabiles have been reset","PT_Milady_resetGlobalVars")
+	sendTraceMessage("Milady's variabiles have been reset","Milady")
 end
 
 function PT_Milady_HandCalc(card,rank)

@@ -17,7 +17,6 @@ SMODS.Joker { -- 08 Robin Hood
 		else
 			info_queue[#info_queue + 1] = {key = 'PT_RobinHood_NoUsedTarots', set = 'Other'}
 		end
-		return {}
 	end,
 	config = {extra = {Rank = 1}},
 	rarity = 2,
@@ -164,8 +163,7 @@ SMODS.Joker { -- 08.2 Hereward
 function PT_RobinHood_resetGlobalVars()
 	G.GAME.PTvar_RobinHood_canBetrayalSpawn = false
 	G.GAME.PTvar_RobinHood_roundCounter = 0
-	print("canBetrayalSpawn = "..tostring(G.GAME.PTvar_RobinHood_canBetrayalSpawn))
-	sendTraceMessage("Robin Hood's variabiles have been reset","PT_RobinHood_resetGlobalVars")
+	sendTraceMessage("Robin Hood's variabiles have been reset","Robin Hood")
 end
 
 function PT_RobinHood_RoundStart(card,rank)
