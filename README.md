@@ -1,5 +1,5 @@
 ![image info](./assets/2x/modicon.png)
-# Phantom Thieves Jokers
+# Phantom Thieves
 
-# CLEAN UP
+## CLEAN UP
 This mod is being rebuilt from scratch.
