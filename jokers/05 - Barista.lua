@@ -1,4 +1,4 @@
-local UTIL = load(NFS.read(SMODS.current_mod.path .. 'util/util.lua'))()
+local UTIL = SMODS.load_file('util/util.lua')()
 
 local C = {
     [1] = 10,

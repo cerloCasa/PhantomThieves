@@ -31,45 +31,47 @@ function UTIL.destroyJoker(card)
 end
 
 function UTIL.createConsumeable(args) -- args{key,set,edition}
-    if (args.edition and args.edition.negative) or (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
-        if args.key == 'lastHandPlayed' then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    if G.GAME.last_hand_played then
-                        local _planet = 0
-                        for k, v in pairs(G.P_CENTER_POOLS.Planet) do
-                            if v.config.hand_type == G.GAME.last_hand_played then
-                                _planet = v.key
-                            end
+    if args.key == 'lastHandPlayed' then
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                local canCreate = (args.edition and args.edition.negative) or (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit)
+                if not canCreate then
+                    return
+                end
+                if G.GAME.last_hand_played then
+                    local _planet = 0
+                    for k, v in pairs(G.P_CENTER_POOLS.Planet) do
+                        if v.config.hand_type == G.GAME.last_hand_played then
+                            _planet = v.key
                         end
-                        local _card = create_card('Planet', G.consumeables, nil, nil, nil, nil, _planet)
-                        _card:add_to_deck()
-                        if args.edition then
-                            _card:set_edition(args.edition)
-                        end
-                        G.consumeables:emplace(_card)
                     end
-                    return true;
-                end}))
-        else
-            G.E_MANAGER:add_event(Event({
-                func = function() 
-                    local _card = create_card(args.set, G.consumeables, nil, nil, nil, nil, args.key)
+                    local _card = create_card('Planet', G.consumeables, nil, nil, nil, nil, _planet)
                     _card:add_to_deck()
                     if args.edition then
                         _card:set_edition(args.edition)
                     end
                     G.consumeables:emplace(_card)
+                end
                 return true;
             end}))
-        end
-        if PT.Debug then
-            print(args.set.." created")
-        end
     else
-        if PT.Debug then
-            print("No room for new consumeable")
-        end
+        G.E_MANAGER:add_event(Event({
+            func = function() 
+                local canCreate = (args.edition and args.edition.negative) or (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit)
+                if not canCreate then
+                    return
+                end
+                local _card = create_card(args.set, G.consumeables, nil, nil, nil, nil, args.key)
+                _card:add_to_deck()
+                if args.edition then
+                    _card:set_edition(args.edition)
+                end
+                G.consumeables:emplace(_card)
+            return true;
+        end}))
+    end
+    if PT.Debug then
+        print(args.set.." created")
     end
 end
 
@@ -92,6 +94,14 @@ function UTIL.random(prob,total)
         print("PROB: "..prob.." in "..total.." is FALSE")
     end
     return false
+end
+
+function UTIL.randomInt(N)
+    local INT = math.ceil(N*pseudorandom(pseudoseed('PT')))
+    if PT.Debug then
+        print("Random number from 1 to "..N.." is "..INT)
+    end
+    return INT
 end
 
 function UTIL.addJokerSlots(amt)
@@ -170,6 +180,21 @@ function UTIL.showTextJoker(args) -- args{card,type,value,istant,scale,noJuice}
             message = 'Copied!',
             colour = G.C.CHIPS,
         }
+    elseif args.type == 'Negative' then
+        eval = {
+            message = 'Negative!',
+            colour = G.C.BLACK,
+        }
+    elseif args.type == 'Good' then
+        eval = {
+            message = 'Good!',
+            colour = G.C.GREEN,
+        }
+    elseif args.type == 'Bad' then
+        eval = {
+            message = 'Bad!',
+            colour = G.C.RED,
+        }
     end
 
     -- CHECK FOR SUPPORTED args.type
@@ -236,9 +261,9 @@ function UTIL.rankUp(card,context)
             if card.ability.extra.Rank > 10 then
                 card.ability.extra.Beyond = card.ability.extra.Beyond + card.ability.extra.Rank - 10
                 card.ability.extra.Rank = 10
-                UTIL.showTextJoker{card = card, type = 'Beyond'}
+                UTIL.showTextJoker{card = context.blueprint_card or card, type = 'Beyond'}
             else
-                UTIL.showTextJoker{card = card, type = 'RankUp'}
+                UTIL.showTextJoker{card = context.blueprint_card or card, type = 'RankUp'}
             end
             G.E_MANAGER:add_event(Event({
                 func = (function()
@@ -267,3 +292,10 @@ function UTIL.rankUp(card,context)
 end
 
 return UTIL
+
+-- G.E_MANAGER:add_event(Event({
+--     func = function()
+        
+--         return true;
+--     end
+-- }))

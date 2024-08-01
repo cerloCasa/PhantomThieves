@@ -115,31 +115,31 @@ function SMODS.current_mod.process_loc_text()
     -- 04. GOEMON
     G.localization.descriptions.Joker['PT_Goemon1'] = {
         name = 'Goemon',
-        text = {'{C:green}#1# in 3{} chance to','duplicate first card','of first hand of round'},
+        text = {'{C:green}#1# in 3{} chance to','duplicate first card','of first hand of round','and draw it to {C:attention}hand'},
     }
     G.localization.descriptions.Joker['PT_Goemon2'] = {
         name = 'Goemon',
-        text = {'{C:green}#1# in 2{} chance to','duplicate first card','of first hand of round'},
+        text = {'{C:green}#1# in 2{} chance to','duplicate first card','of first hand of round','and draw it to {C:attention}hand'},
     }
     G.localization.descriptions.Joker['PT_Goemon3'] = {
         name = 'Goemon',
-        text = {'Duplicate first card','of first hand of round'},
+        text = {'Duplicate first card','of first hand of round','and draw it to {C:attention}hand'},
     }
     G.localization.descriptions.Joker['PT_Goemon4-7'] = {
         name = 'Goemon',
-        text = {'Duplicate first {C:attention}#1#{} cards','of first hand of round'},
+        text = {'Duplicate first {C:attention}#1#{} cards','of first hand of round','and draw them to {C:attention}hand'},
     }
     G.localization.descriptions.Joker['PT_Goemon8'] = {
         name = 'Goemon',
-        text = {'Duplicate first','hand of round'},
+        text = {'Duplicate first','hand of round','and draw it to {C:attention}hand'},
     }
     G.localization.descriptions.Joker['PT_Goemon9'] = {
         name = '{C:blue}Kamu Susano-o',
-        text = {'Duplicate first {C:attention}2{}','hands of round'},
+        text = {'Duplicate first {C:attention}2{}','hands of round','and draw them to {C:attention}hand'},
     }
     G.localization.descriptions.Joker['PT_GoemonMAX'] = {
         name = '{C:red}Gorokichi',
-        text = {'Duplicate first {C:attention}3{}','hands of round'},
+        text = {'Duplicate first {C:attention}3{}','hands of round','and draw them to {C:attention}hand'},
     }
     G.localization.descriptions.Other['PT_Beyond_Emperor'] = {
         name = 'Beyond',
@@ -149,14 +149,90 @@ function SMODS.current_mod.process_loc_text()
     -- 05. BARISTA
     G.localization.descriptions.Joker['PT_Barista9'] = {
         name = '{C:blue}Sojiro',
-        text = {'{C:chips}+#1#{} Chips for every','other {C:red}Phantom Thieves','Joker you own'},
+        text = {'{C:chips}+#1#{} Chips for every','other {C:red}Phantom Thieves','{C:attention}Joker{} you own'},
     }
     G.localization.descriptions.Joker['PT_BaristaMAX'] = {
         name = '{C:red}Boss',
-        text = {'{C:chips}+#1#{} Chips for every','other {C:red}Phantom Thieves','Joker you own'},
+        text = {'{C:chips}+#1#{} Chips for every','other {C:red}Phantom Thieves','{C:attention}Joker{} you own'},
     }
     G.localization.descriptions.Other['PT_Beyond_Hierophant'] = {
         name = 'Beyond',
         text = {'Each {C:purple}Hierophant{} card played','from now gives {C:chips}+10{} Chips','{C:inactive}(Currently {C:chips}+#1# {C:inactive}chips)'}
+    }
+
+    -- 07. CAPTAIN KIDD
+    G.localization.descriptions.Joker['PT_CaptainKidd2-4'] = {
+        name = 'Captain Kidd',
+        text = {'Level up first {C:attention}#1#{} hands','played each round'},
+    }
+    G.localization.descriptions.Joker['PT_CaptainKidd5-6'] = {
+        name = 'Captain Kidd',
+        text = {'Upgrade level of','played {C:attention}poker hand'},
+    }
+    G.localization.descriptions.Joker['PT_CaptainKidd7-8'] = {
+        name = 'Captain Kidd',
+        text = {'Upgrade level of','played {C:attention}poker hand','{C:attention}2{} times'},
+    }
+    G.localization.descriptions.Joker['PT_CaptainKidd9'] = {
+        name = '{C:blue}Seiten Taisei',
+        text = {'Upgrade level of','played {C:attention}poker hand','{C:attention}3{} times'},
+    }
+    G.localization.descriptions.Joker['PT_CaptainKiddMAX'] = {
+        name = '{C:red}William',
+        text = {'Upgrade level of','played {C:attention}poker hand','and all contained','hands {C:attention}3{} times'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Chariot'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Chariot{} card played','from now gives {C:attention}+1{} upgrade','{C:inactive}(Currently {C:attention}+#1# {C:inactive}upgrades)'}
+    }
+
+    -- 08. ROBIN HOOD
+    G.localization.descriptions.Joker['PT_RobinHood1-8'] = {
+        name = 'Robin Hood',
+        text = {'{C:green}#1# in #2#{} chance to','enhance a random {C:attention}Joker','you own to {C:dark_edition}negative{} at','end of round'},
+    }
+    G.localization.descriptions.Joker['PT_RobinHood9'] = {
+        name = '{C:blue}Loki',
+        text = {'{C:green}#1# in 3{} chance to','enhance a random {C:attention}Joker','you own to {C:dark_edition}negative{} at','end of round'},
+    }
+    G.localization.descriptions.Joker['PT_RobinHoodMAX'] = {
+        name = '{C:red}Hereward',
+        text = {'Enhance a random {C:attention}Joker','you own to {C:dark_edition}negative{} at','end of round'},
+    }
+
+    -- 09. NECRONOMICON
+    G.localization.descriptions.Joker['PT_Necronomicon5-8'] = {
+        name = 'Necronomicon',
+        text = {'Create a {C:attention}useful {C:purple}Tarot','at the end of the round','{C:inactive}(Must have room)'},
+    }
+    G.localization.descriptions.Joker['PT_Necronomicon9'] = {
+        name = '{C:blue}Prometheus',
+        text = {'Create two {C:attention}useful {C:purple}Tarots','at the end of the round','{C:inactive}(Must have room)'},
+    }
+    G.localization.descriptions.Joker['PT_NecronomiconMAX'] = {
+        name = '{C:red}Al Azif',
+        text = {'Create two {C:dark_edition}negative {C:attention}useful','{C:purple}Tarots{} at the end of the round','{C:inactive}(Must have room)'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Hermit'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Hermit{} card played','from now creates {C:purple}+1{} Tarot','{C:inactive}(Currently {C:purple}+#1# {C:inactive}Tarots)'}
+    }
+    G.localization.descriptions.Other['PT_UsefulTarot'] = {
+        name = 'Useful Tarots',
+        text = {'A {C:purple}Tarot{} is {C:attention}useful','when it is linked to a','{C:red}Phantom Thieves {C:attention}Joker{} you own'}
+    }
+
+    -- 10. PROPHETESS
+    G.localization.descriptions.Joker['PT_Prophetess9'] = {
+        name = '{C:blue}Chihaya',
+        text = {'{C:green}1 in 2{} chance {C:inactive}(fixed){}.','If it\'s {X:green,C:white}Good{}, all scoring','cards give {C:chips}+#1#{} Chips.','If it\'s {X:red,C:white}Bad{}, all scoring','cards give {C:chips}-#2#{} Chips.'},
+    }
+    G.localization.descriptions.Joker['PT_ProphetessMAX'] = {
+        name = '{C:red}Lucky Charm',
+        text = {'{C:green}1 in 2{} chance {C:inactive}(fixed){}.','If it\'s {X:green,C:white}Good{}, all scoring','cards give {C:chips}+#1#{} Chips.','If it\'s {X:red,C:white}Bad{}, all scoring','cards give {C:chips}-#2#{} Chips.'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_WheelOfFortune'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Wheel of Fortune{}','card played from now adds','{C:chips}+10{} Chips to the {X:green,C:white}Good{} and','{C:chips}+5{} Chips to the {X:red,C:white}Bad','{C:inactive}(Currently {C:chips}+#1#{} and {C:chips}#2# {C:inactive}Chips)'}
     }
 end

@@ -1,4 +1,4 @@
-local UTIL = load(NFS.read(SMODS.current_mod.path .. 'util/util.lua'))()
+local UTIL = SMODS.load_file('util/util.lua')()
 
 local Dups = {
     [4] = 2,
@@ -40,7 +40,7 @@ SMODS.Joker { -- 04 Goemon
     key = 'Goemon',
     loc_txt = {
         name = 'Goemon',
-        text = {'{C:green}1 in 3{} chance to','duplicate first card','of first hand of round'},
+        text = {'{C:green}1 in 3{} chance to','duplicate first card','of first hand of round','and draw it to {C:attention}hand'},
     },
     loc_vars = function(self, info_queue, card)
         if G.GAME and G.GAME.PT then
