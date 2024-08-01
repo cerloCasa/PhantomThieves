@@ -19,15 +19,15 @@ function SMODS.current_mod.process_loc_text()
     }
     G.localization.descriptions.Joker['PT_Igor2-8'] = {
         name = 'Igor',
-        text = {'All {C:red}Phantom Thieves{}','Jokers can\'t be below','Rank #1#'},
+        text = {'All {C:red}Phantom Thieves{}','Jokers can\'t be below','Rank {C:attention}#1#'},
     }
     G.localization.descriptions.Joker['PT_Igor9'] = {
         name = '{C:blue}Igor',
-        text = {'All {C:red}Phantom Thieves{}','Jokers can\'t be below','Rank 9'},
+        text = {'All {C:red}Phantom Thieves{}','Jokers can\'t be below','Rank {C:attention}9'},
     }
     G.localization.descriptions.Joker['PT_IgorMAX'] = {
         name = '{C:red}Igor',
-        text = {'All {C:red}Phantom Thieves{}','Jokers can\'t be below','Rank Max'},
+        text = {'All {C:red}Phantom Thieves{}','Jokers can\'t be below','Rank {C:attention}Max'},
     }
 	G.localization.descriptions.Other['PT_Beyond_Fool'] = {
 		name = 'Beyond',
@@ -110,5 +110,53 @@ function SMODS.current_mod.process_loc_text()
     G.localization.descriptions.Other['PT_Beyond_Empress'] = {
         name = 'Beyond',
         text = {'Each {C:purple}Empress{} card played from','now gives {C:money}+$1{}','{C:inactive}(Currently {C:attention}+$#1# {C:inactive})'}
+    }
+    
+    -- 04. GOEMON
+    G.localization.descriptions.Joker['PT_Goemon1'] = {
+        name = 'Goemon',
+        text = {'{C:green}#1# in 3{} chance to','duplicate first card','of first hand of round'},
+    }
+    G.localization.descriptions.Joker['PT_Goemon2'] = {
+        name = 'Goemon',
+        text = {'{C:green}#1# in 2{} chance to','duplicate first card','of first hand of round'},
+    }
+    G.localization.descriptions.Joker['PT_Goemon3'] = {
+        name = 'Goemon',
+        text = {'Duplicate first card','of first hand of round'},
+    }
+    G.localization.descriptions.Joker['PT_Goemon4-7'] = {
+        name = 'Goemon',
+        text = {'Duplicate first {C:attention}#1#{} cards','of first hand of round'},
+    }
+    G.localization.descriptions.Joker['PT_Goemon8'] = {
+        name = 'Goemon',
+        text = {'Duplicate first','hand of round'},
+    }
+    G.localization.descriptions.Joker['PT_Goemon9'] = {
+        name = '{C:blue}Kamu Susano-o',
+        text = {'Duplicate first {C:attention}2{}','hands of round'},
+    }
+    G.localization.descriptions.Joker['PT_GoemonMAX'] = {
+        name = '{C:red}Gorokichi',
+        text = {'Duplicate first {C:attention}3{}','hands of round'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Emperor'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Emperor{} card played','from now gives {C:attention}+1{} hand','{C:inactive}(Currently {C:attention}+#1# {C:inactive}hands)'}
+    }
+    
+    -- 05. BARISTA
+    G.localization.descriptions.Joker['PT_Barista9'] = {
+        name = '{C:blue}Sojiro',
+        text = {'{C:chips}+#1#{} Chips for every','other {C:red}Phantom Thieves','Joker you own'},
+    }
+    G.localization.descriptions.Joker['PT_BaristaMAX'] = {
+        name = '{C:red}Boss',
+        text = {'{C:chips}+#1#{} Chips for every','other {C:red}Phantom Thieves','Joker you own'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Hierophant'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Hierophant{} card played','from now gives {C:chips}+10{} Chips','{C:inactive}(Currently {C:chips}+#1# {C:inactive}chips)'}
     }
 end

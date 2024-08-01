@@ -20,21 +20,23 @@ SMODS.Joker { -- 03 Milady
     key = 'Milady',
     loc_txt = {
         name = 'Milady',
-        text = {'ABILITY'},
+        text = {'Earn {C:money}$#1#{} at','end of round'},
     },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Empress'}}
         if G.GAME and G.GAME.PT then
             if card.ability.extra.Rank <= 8 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Empress'}}
                 return {key = 'PT_Milady1-8', set = 'Joker', vars = {Money[card.ability.extra.Rank]}}
             elseif card.ability.extra.Rank == 9 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Empress'}}
                 return {key = 'PT_Milady9', set = 'Joker'}
             else
                 info_queue[#info_queue + 1] = {key = 'PT_Beyond_Empress', set = 'Other', vars = {card.ability.extra.Beyond}}
                 return {key = 'PT_MiladyMAX', set = 'Joker'}
             end
         else
-            return {vars = {}}
+            info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Empress'}}
+            return {vars = {Money[1]}}
         end
     end,
     config = {extra = {Rank = 1, Beyond = 0}},
@@ -52,9 +54,7 @@ SMODS.Joker { -- 03 Milady
     perishable_compat = true,
     linked_tarot = 'c_empress',
     igor_rankUp = function(card)
-        while card.ability.extra.Rank < G.GAME.PT.Igor.MinRank do
-            UTIL.rankUp(card,{igor = true})
-        end
+        UTIL.rankUp(card,{igor = true})
     end,
     calculate = function(self,card,context)
         -- RANK UP
@@ -65,13 +65,13 @@ SMODS.Joker { -- 03 Milady
         if context.end_of_round and not context.repetition and not context.individual then
             if rank <= 8 then
                 ease_dollars(Money[rank])
-                card_eval_status_text(context.blueprint_card or card, 'dollars', Money[rank])
+                UTIL.showTextJoker{card = context.blueprint_card or card, type = 'Money', value = Money[rank]}
             end
         end
         if context.joker_main then
             if rank == 9 then
                 ease_dollars(Money[9])
-                card_eval_status_text(context.blueprint_card or card, 'dollars', Money[9])
+                UTIL.showTextJoker{card = context.blueprint_card or card, type = 'Money', value = Money[9]}
             end
         end
         if context.individual and not context.repetition and context.cardarea == G.play then
@@ -81,8 +81,9 @@ SMODS.Joker { -- 03 Milady
                         ease_dollars(Money.MAX + beyond)
                         context.other_card:juice_up()
                         return true
-                end)}))
-                card_eval_status_text(context.blueprint_card or card, 'dollars', Money.MAX + beyond)
+                    end
+                )}))
+                UTIL.showTextJoker{card = context.blueprint_card or card, type = 'Money', value = Money.MAX + beyond}
             end
         end
     end,

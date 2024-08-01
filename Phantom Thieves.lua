@@ -6,12 +6,12 @@
 --- BADGE_COLOR: DB2109
 --- PREFIX: PT
 --- LOADER_VERSION_GEQ: 1.0.0
---- VERSION: Build1-Ver1.0
+--- VERSION: Build2-Ver1.0
 
 -- MOD SETTINGS
 PT = {
     Debug = true,
-    UpdateVanillaTarots = true
+    UpdateVanillaTarots = 'Full'
 }
 
 -- UTILITY FUNCTIONS
@@ -25,8 +25,8 @@ local IGOR = load(NFS.read(SMODS.current_mod.path .. 'jokers/00 - Igor.lua'))()
 local ZORRO = load(NFS.read(SMODS.current_mod.path .. 'jokers/01 - Zorro.lua'))()
 local JOHANNA = load(NFS.read(SMODS.current_mod.path .. 'jokers/02 - Johanna.lua'))()
 local MILADY = load(NFS.read(SMODS.current_mod.path .. 'jokers/03 - Milady.lua'))()
--- local GOEMON = load(NFS.read(SMODS.current_mod.path .. 'jokers/04 - Goemon.lua'))()
--- local CHIEF = load(NFS.read(SMODS.current_mod.path .. 'jokers/05 - Chief.lua'))()
+local GOEMON = load(NFS.read(SMODS.current_mod.path .. 'jokers/04 - Goemon.lua'))()
+local BARISTA = load(NFS.read(SMODS.current_mod.path .. 'jokers/05 - Barista.lua'))()
 -- local CARMEN = load(NFS.read(SMODS.current_mod.path .. 'jokers/06 - Carmen.lua'))()
 -- local CAPTAIN_KIDD = load(NFS.read(SMODS.current_mod.path .. 'jokers/07 - Captain Kidd.lua'))()
 -- local ROBIN_HOOD = load(NFS.read(SMODS.current_mod.path .. 'jokers/08 - Robin Hood.lua'))()
@@ -40,7 +40,7 @@ local MILADY = load(NFS.read(SMODS.current_mod.path .. 'jokers/03 - Milady.lua')
 -- local SKILLED_GAMER = load(NFS.read(SMODS.current_mod.path .. 'jokers/16 - Skilled Gamer.lua'))()
 -- local SHOGI_PLAYER = load(NFS.read(SMODS.current_mod.path .. 'jokers/17 - Shogi Player.lua'))()
 -- local ADMIN = load(NFS.read(SMODS.current_mod.path .. 'jokers/18 - Admin.lua'))()
--- local MAN_OF_THE_PEOPLE = load(NFS.read(SMODS.current_mod.path .. 'jokers/19 - Man of the People.lua'))()
+-- local POLITICIAN = load(NFS.read(SMODS.current_mod.path .. 'jokers/19 - Politician.lua'))()
 -- local PROSECUTOR = load(NFS.read(SMODS.current_mod.path .. 'jokers/20 - Prosecutor.lua'))()
 -- local ARSÈNE = load(NFS.read(SMODS.current_mod.path .. 'jokers/21 - Arsène.lua'))()
 

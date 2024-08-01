@@ -7,19 +7,22 @@ SMODS.Joker { -- 00 Igor
         text = {'{C:dark_edition}+1{} Joker slot','{C:inactive}(Permanent)'},
     },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Fool'}}
         if G.GAME and G.GAME.PT then
             if card.ability.extra.Rank == 1 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Fool'}}
                 return {key = 'PT_Igor1', set = 'Joker'}
             elseif card.ability.extra.Rank <= 8 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Fool'}}
                 return {key = 'PT_Igor2-8', set = 'Joker', vars = {card.ability.extra.Rank}}
             elseif card.ability.extra.Rank == 9 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Fool'}}
                 return {key = 'PT_Igor9', set = 'Joker'}
             else
                 info_queue[#info_queue + 1] = {key = 'PT_Beyond_Fool', set = 'Other', vars = {card.ability.extra.Beyond}}
                 return {key = 'PT_IgorMAX', set = 'Joker'}
             end
         else
+            info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Fool'}}
             return {vars = {}}
         end
     end,
@@ -38,12 +41,11 @@ SMODS.Joker { -- 00 Igor
     perishable_compat = true,
     linked_tarot = 'c_fool',
     igor_rankUp = function(card)
-        while card.ability.extra.Rank < G.GAME.PT.Igor.MinRank do
-            UTIL.rankUp(card,{igor = true})
-        end
+        UTIL.rankUp(card,{igor = true})
     end,
     add_to_deck = function(self,card,from_debuff)
         UTIL.addJokerSlots(1)
+        UTIL.showTextJoker{card = card, type = '+JokerSlot', value = 1}
     end,
     calculate = function(self,card,context)
         -- RANK UP

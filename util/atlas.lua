@@ -12,12 +12,22 @@ SMODS.Atlas { -- Jokers
     path = 'Jokers.png',
 }
 
-SMODS.Atlas { -- Tarots
-    key = 'Tarots',
-    px = 71,
-    py = 95,
-    path = 'Tarots.png',
-}
+if PT.UpdateVanillaTarots == 'Semi' then
+    SMODS.Atlas { -- Vanilla Tarots
+        key = 'Tarots',
+        px = 71,
+        py = 95,
+        path = 'Tarots Semi.png',
+    }
+end
+if PT.UpdateVanillaTarots == 'Full' then
+    SMODS.Atlas { -- Vanilla Tarots
+        key = 'Tarots',
+        px = 71,
+        py = 95,
+        path = 'Tarots Full.png',
+    }
+end
 
 SMODS.Atlas { -- Decks
     key = 'Decks',

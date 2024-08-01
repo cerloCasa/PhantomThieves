@@ -4,26 +4,31 @@ SMODS.Joker { -- 02 Johanna
     key = 'Johanna',
     loc_txt = {
         name = 'Johanna',
-        text = {'ABILITY'},
+        text = {'Retrigger the first','scoring card'},
     },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'High Priestess'}}
         if G.GAME and G.GAME.PT then
             if card.ability.extra.Rank <= 2 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'High Priestess'}}
                 return {key = 'PT_Johanna1-2', set = 'Joker'}
             elseif card.ability.extra.Rank <= 4 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'High Priestess'}}
                 return {key = 'PT_Johanna3-4', set = 'Joker'}
             elseif card.ability.extra.Rank <= 6 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'High Priestess'}}
                 return {key = 'PT_Johanna5-6', set = 'Joker'}
             elseif card.ability.extra.Rank <= 8 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'High Priestess'}}
                 return {key = 'PT_Johanna7-8', set = 'Joker'}
             elseif card.ability.extra.Rank == 9 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'High Priestess'}}
                 return {key = 'PT_Johanna9', set = 'Joker'}
             else
                 info_queue[#info_queue + 1] = {key = 'PT_Beyond_HighPriestess', set = 'Other', vars = {card.ability.extra.Beyond}}
                 return {key = 'PT_JohannaMAX', set = 'Joker'}
             end
         else
+            info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'High Priestess'}}
             return {vars = {}}
         end
     end,
@@ -42,9 +47,7 @@ SMODS.Joker { -- 02 Johanna
     perishable_compat = true,
     linked_tarot = 'c_high_priestess',
     igor_rankUp = function(card)
-        while card.ability.extra.Rank < G.GAME.PT.Igor.MinRank do
-            UTIL.rankUp(card,{igor = true})
-        end
+        UTIL.rankUp(card,{igor = true})
     end,
     calculate = function(card,card,context)
         -- RANK UP

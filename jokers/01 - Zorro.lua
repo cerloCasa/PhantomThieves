@@ -7,23 +7,28 @@ SMODS.Joker { -- 01 Zorro
         text = {'Create a random {C:planet}Planet','card at the end','of the round','{C:inactive}(Must have room)'},
     },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Magician'}}
         if G.GAME and G.GAME.PT then
             if card.ability.extra.Rank <= 2 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Magician'}}
                 return {key = 'PT_Zorro1-2', set = 'Joker'}
             elseif card.ability.extra.Rank <= 4 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Magician'}}
                 return {key = 'PT_Zorro3-4', set = 'Joker'}
             elseif card.ability.extra.Rank <= 6 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Magician'}}
                 return {key = 'PT_Zorro5-6', set = 'Joker'}
             elseif card.ability.extra.Rank <= 8 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Magician'}}
                 return {key = 'PT_Zorro7-8', set = 'Joker'}
             elseif card.ability.extra.Rank == 9 then
+                info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Magician'}}
                 return {key = 'PT_Zorro9', set = 'Joker'}
             else
                 info_queue[#info_queue + 1] = {key = 'PT_Beyond_Magician', set = 'Other', vars = {card.ability.extra.Beyond}}
                 return {key = 'PT_ZorroMAX', set = 'Joker'}
             end
         else
+            info_queue[#info_queue + 1] = {key = 'PT_LinkedTarot', set = 'Other', vars = {'Magician'}}
             return {vars = {}}
         end
     end,
@@ -42,9 +47,7 @@ SMODS.Joker { -- 01 Zorro
     perishable_compat = true,
     linked_tarot = 'c_magician',
     igor_rankUp = function(card)
-        while card.ability.extra.Rank < G.GAME.PT.Igor.MinRank do
-            UTIL.rankUp(card,{igor = true})
-        end
+        UTIL.rankUp(card,{igor = true})
     end,
     calculate = function(self,card,context)
         -- RANK UP
