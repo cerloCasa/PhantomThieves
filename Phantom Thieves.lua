@@ -10,7 +10,7 @@
 
 -- MOD SETTINGS
 PT = {
-    Debug = true,
+    Debug = false,
     UpdateVanillaTarots = 'Full'
 }
 
