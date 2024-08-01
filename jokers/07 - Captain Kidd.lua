@@ -70,7 +70,7 @@ SMODS.Joker { -- 07 Captain Kidd
         end
     end,
     config = {extra = {Rank = 1, Beyond = 0}},
-    rarity = 1, -- 1 common, 2 uncommon, 3 rare, 4 legendary
+    rarity = 2, -- 1 common, 2 uncommon, 3 rare, 4 legendary
     pos = {x = 0, y = 7},
     set_ability = function(self,card)
         UTIL.spriteCalc(card)
