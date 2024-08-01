@@ -1,5 +1,9 @@
 ![image info](./assets/2x/modicon.png)
 # Phantom Thieves
-
-## CLEAN UP
-This mod is being rebuilt from scratch.
+Here is the content currently added:
+## Jokers
+Igor, Zorro, Johanna, Milady
+## Decks
+Phantom Deck
+## Tarot
+Modification to Vanilla Tarots
