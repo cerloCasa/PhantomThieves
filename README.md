@@ -1,5 +1,5 @@
 ![image info](./assets/2x/modicon.png)
-# Phantom Thieves Build2-Ver1.0
+# Phantom Thieves Build3-Ver1.0
 Here is the content currently added:
 ## Jokers
 - **Igor**, the Legendary Fool Joker
@@ -8,6 +8,10 @@ Here is the content currently added:
 - **Milady**, the Uncommon Empress Joker
 - **Goemon**, the Uncommon Emperor Joker
 - **Barista**, the Common Hierophant Joker
+- **Captain Kidd**, the Rare Chariot Joker
+- **Robin Hood**, the Uncommon Justice Joker
+- **Necronomicon**, the Uncommon Hermit Joker
+- **Prophetess**, the Common Wheel of Fortune Joker
 ## Decks
 - **Phantom Deck**: *"Start with Igor, +1 consumable slot"*
 ## Tarot
