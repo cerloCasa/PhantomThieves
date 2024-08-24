@@ -18,7 +18,7 @@ function Back.apply_to_run(self)
 	vanilla_Back_apply_to_run(self)
     RunStart()
     if PT.Debug then
-        print('RunStart has been added')
+        print('RunStart has been run')
     end
     return true
 end
@@ -47,6 +47,6 @@ G.FUNCS.use_card = function(e,mute,nosave)
     vanilla_G_FUNCS_use_card(e,mute,nosave)
     ConsumeableUsed(e)
     if PT.Debug then
-        print('ConsumeableUsed has been added')
+        print('ConsumeableUsed has been run')
     end
 end

@@ -1,7 +1,8 @@
 ![image info](./assets/2x/modicon.png)
-# Phantom Thieves Build3-Ver1.0
+# Phantom Thieves Build4-Ver1.0
 Here is the content currently added:
-## Jokers (10/22)
+
+## Jokers
 - **Igor**, the Legendary Fool Joker
 - **Zorro**, the Uncommon Magician Joker
 - **Johanna**, the Uncommon High Priestess Joker
@@ -12,8 +13,16 @@ Here is the content currently added:
 - **Robin Hood**, the Uncommon Justice Joker
 - **Necronomicon**, the Uncommon Hermit Joker
 - **Prophetess**, the Common Wheel of Fortune Joker
+- **Wardens**, the Rare Strength Joker
+- **Weapons dealer**, the Common Hanged Man Joker
+- **Teacher**, the Common Temperance Joker
+- **Paparazza**, the Common Devil Joker
+- **Skilled Gamer**, the Common Tower Joker
+- **Shogi Player**, the Common Star Joker
+
 ## Decks
 - **Phantom Deck**: *"Start with Igor, +1 consumable slot"*
+
 ## Tarot
 - **Vanilla**, modification to the art of vanilla Tarots
 

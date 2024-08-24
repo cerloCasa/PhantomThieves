@@ -228,11 +228,145 @@ function SMODS.current_mod.process_loc_text()
         text = {'{C:green}1 in 2{} chance {C:inactive}(fixed){}.','If it\'s {X:green,C:white}Good{}, all scoring','cards give {C:chips}+#1#{} Chips.','If it\'s {X:red,C:white}Bad{}, all scoring','cards give {C:chips}-#2#{} Chips.'},
     }
     G.localization.descriptions.Joker['PT_ProphetessMAX'] = {
-        name = '{C:red}Lucky Charm',
+        name = '{C:red}Lucky charm',
         text = {'{C:green}1 in 2{} chance {C:inactive}(fixed){}.','If it\'s {X:green,C:white}Good{}, all scoring','cards give {C:chips}+#1#{} Chips.','If it\'s {X:red,C:white}Bad{}, all scoring','cards give {C:chips}-#2#{} Chips.'},
     }
     G.localization.descriptions.Other['PT_Beyond_WheelOfFortune'] = {
         name = 'Beyond',
         text = {'Each {C:purple}Wheel of Fortune{}','card played from now adds','{C:chips}+10{} Chips to the {X:green,C:white}Good{} and','{C:chips}+5{} Chips to the {X:red,C:white}Bad','{C:inactive}(Currently {C:chips}+#1#{} and {C:chips}#2# {C:inactive}Chips)'}
+    }
+    
+    -- 11. WARDENS
+    G.localization.descriptions.Joker['PT_Wardens2-4'] = {
+        name = 'Wardens',
+        text = {'{C:dark_edition}+1{} Joker slot'},
+    }
+    G.localization.descriptions.Joker['PT_Wardens5-8'] = {
+        name = 'Wardens',
+        text = {'{C:dark_edition}+2{} Joker slots'},
+    }
+    G.localization.descriptions.Joker['PT_Wardens9'] = {
+        name = '{C:blue}Twins',
+        text = {'{C:dark_edition}+2{} Joker slots'},
+    }
+    G.localization.descriptions.Joker['PT_WardensMAX'] = {
+        name = '{C:red}Lavenza',
+        text = {'{C:dark_edition}+3{} Joker slots'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Strength'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Strength{} card played','from now gives {C:dark_edition}+1{} Joker slot','{C:inactive}(Currently {C:dark_edition}+#1# {C:inactive}Joker slots)'}
+    }
+    
+    -- 12. WEAPONS DEALER
+    G.localization.descriptions.Joker['PT_WeaponsDealer1-4'] = {
+        name = 'Weapons dealer',
+        text = {'Chance to {C:attention}upgrade','all scoring cards','to {C:dark_edition}Foil'},
+    }
+    G.localization.descriptions.Joker['PT_WeaponsDealer5-8'] = {
+        name = 'Weapons dealer',
+        text = {'Chance to {C:attention}upgrade','all scoring cards','to {C:dark_edition}Holographic'},
+    }
+    G.localization.descriptions.Joker['PT_WeaponsDealer9'] = {
+        name = '{C:blue}Iwai',
+        text = {'Chance to {C:attention}upgrade','all scoring cards','to {C:dark_edition}Holographic'},
+    }
+    G.localization.descriptions.Joker['PT_WeaponsDealerMAX'] = {
+        name = '{C:red}Yakuza agent',
+        text = {'Chance to {C:attention}upgrade','all scoring cards','to {C:dark_edition}Polychrome'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_HangedMan'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Hanged Man{} card played','from now gives {C:dark_edition}+1{} chance to transform','{C:inactive}(Currently {C:dark_edition}+#1# {C:inactive}transformations)'}
+    }
+    
+    -- 13. BACK ALLEY DOCTOR
+    G.localization.descriptions.Joker['PT_BackAlleyDoctor6-8'] = {
+        name = 'Back alley doctor',
+        text = {'{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult','per {C:purple}Tarot{} card used','{C:inactive}(Currently {C:chips}+#3# {C:inactive}Chips and {C:mult}+#4# {C:inactive}Mult)'},
+    }
+    G.localization.descriptions.Joker['PT_BackAlleyDoctor9'] = {
+        name = '{C:blue}Takemi',
+        text = {'{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult','per {C:purple}Tarot{} card used','{C:inactive}(Currently {C:chips}+#3# {C:inactive}Chips and {C:mult}+#4# {C:inactive}Mult)'},
+    }
+    G.localization.descriptions.Joker['PT_BackAlleyDoctorMAX'] = {
+        name = '{C:red}Plague',
+        text = {'{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult','per {C:purple}Tarot{} card used','{C:inactive}(Currently {C:chips}+#3# {C:inactive}Chips','and {C:mult}+#4# {C:inactive}Mult)'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Death'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Death{} card played','from now gives {C:chips}+10{} Chips and {C:mult}+1{} Mult','{C:inactive}(Currently {C:chips}+#1# {C:inactive}and {C:mult}+#2#{C:inactive})'}
+    }
+    
+    -- 14. TEACHER
+    G.localization.descriptions.Joker['PT_Teacher9'] = {
+        name = '{C:blue}Becky',
+        text = {'Scoring cards give','{C:chips}+#1#{} Chips'},
+    }
+    G.localization.descriptions.Joker['PT_TeacherMAX'] = {
+        name = '{C:red}Kawakami',
+        text = {'Scoring cards give','{C:chips}+#1#{} Chips'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Temperance'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Temperance{} card played','from now gives {C:chips}+10{} Chips','{C:inactive}(Currently {C:chips}+#1# {C:inactive}Chips)'}
+    }
+
+    -- 15. PAPARAZZA
+    G.localization.descriptions.Joker['PT_Paparazza9'] = {
+        name = '{C:blue}Ohya',
+        text = {'Reduce required {C:attention}chip','{C:attention}score{} of {C:attention}Blinds','by #1#%'},
+    }
+    G.localization.descriptions.Joker['PT_PaparazzaMAX'] = {
+        name = '{C:red}Truth finder',
+        text = {'Reduce required {C:attention}chip','{C:attention}score{} of {C:attention}Blinds','by #1#%'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Devil'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Devil{} card played','from now reduces required','{C:attention}chip score{} by 2%','{C:inactive}(Currently #1#%) (Max 60%)'}
+    }
+    
+    -- 16. SKILLED GAMER
+    G.localization.descriptions.Joker['PT_SkilledGamer4-6'] = {
+        name = 'Skilled gamer',
+        text = {'{C:blue}+1{} hand','each round'},
+    }
+    G.localization.descriptions.Joker['PT_SkilledGamer7-8'] = {
+        name = 'Skilled gamer',
+        text = {'{C:blue}+2{} hands','each round'},
+    }
+    G.localization.descriptions.Joker['PT_SkilledGamer9'] = {
+        name = '{C:blue}Oda',
+        text = {'{C:blue}+2{} hands','each round'},
+    }
+    G.localization.descriptions.Joker['PT_SkilledGamerMAX'] = {
+        name = '{C:red}Arcade specialist',
+        text = {'{C:blue}+3{} hands','each round'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Tower'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Tower{} card played','from now adds {C:blue}+1{}','hand each round','{C:inactive}(Currently {C:blue}+#1#{C:inactive} hands)'}
+    }
+    
+    -- 17. SHOGI PLAYER
+    G.localization.descriptions.Joker['PT_ShogiPlayer4-6'] = {
+        name = 'Shogi player',
+        text = {'{C:red}+1{} hand','each round'},
+    }
+    G.localization.descriptions.Joker['PT_ShogiPlayer7-8'] = {
+        name = 'Shogi player',
+        text = {'{C:red}+2{} hands','each round'},
+    }
+    G.localization.descriptions.Joker['PT_ShogiPlayer9'] = {
+        name = '{C:blue}Hifumi',
+        text = {'{C:red}+2{} hands','each round'},
+    }
+    G.localization.descriptions.Joker['PT_ShogiPlayerMAX'] = {
+        name = '{C:red}Strategist',
+        text = {'{C:red}+3{} hands','each round'},
+    }
+    G.localization.descriptions.Other['PT_Beyond_Star'] = {
+        name = 'Beyond',
+        text = {'Each {C:purple}Star{} card played','from now adds {C:red}+1{}','hand each round','{C:inactive}(Currently {C:red}+#1#{C:inactive} hands)'}
     }
 end

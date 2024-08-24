@@ -46,10 +46,9 @@ function UTIL.createConsumeable(args) -- args{key,set,edition}
                         end
                     end
                     local _card = create_card('Planet', G.consumeables, nil, nil, nil, nil, _planet)
+                    _card.ability.qty = 1
+                    _card:set_edition(args.edition)
                     _card:add_to_deck()
-                    if args.edition then
-                        _card:set_edition(args.edition)
-                    end
                     G.consumeables:emplace(_card)
                 end
                 return true;
@@ -62,10 +61,9 @@ function UTIL.createConsumeable(args) -- args{key,set,edition}
                     return
                 end
                 local _card = create_card(args.set, G.consumeables, nil, nil, nil, nil, args.key)
+                _card.ability.qty = 1
+                _card:set_edition(args.edition)
                 _card:add_to_deck()
-                if args.edition then
-                    _card:set_edition(args.edition)
-                end
                 G.consumeables:emplace(_card)
             return true;
         end}))
@@ -162,6 +160,30 @@ function UTIL.showTextJoker(args) -- args{card,type,value,istant,scale,noJuice}
                 colour = G.C.ORANGE
             }
         end
+    elseif args.type == 'Chips' then
+        if not args.value then
+            if PT.Debug then
+                print('Missing args.value in showTextJoker function')
+            end
+        end
+        eval = {
+            sound = 'chips1',
+            scale = 1,
+            message = (args.value < 0 and '-' or '+')..args.value,
+            colour = G.C.CHIPS
+        }
+    elseif args.type == 'Mult' then
+        if not args.value then
+            if PT.Debug then
+                print('Missing args.value in showTextJoker function')
+            end
+        end
+        eval = {
+            sound = 'multhit1',
+            scale = 1,
+            message = (args.value < 0 and '-' or '+')..args.value..' Mult',
+            colour = G.C.MULT
+        }
     elseif args.type == 'Money' then
         if not args.value then
             if PT.Debug then
@@ -194,6 +216,11 @@ function UTIL.showTextJoker(args) -- args{card,type,value,istant,scale,noJuice}
         eval = {
             message = 'Bad!',
             colour = G.C.RED,
+        }
+    elseif args.type == 'Upgrade' then
+        eval = {
+            message = 'Upgrade!',
+            colour = G.C.DARK_EDITION,
         }
     end
 

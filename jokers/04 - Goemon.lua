@@ -8,6 +8,8 @@ local Dups = {
 }
 
 local function copyCard(args) -- cardN, context
+    -- args.cardN is the position of the card in the played hand. If it's 0, then copy all hand
+    -- args.context is context 
     local context = args.context
     local i = args.cardN
     if i > 0 then
@@ -21,6 +23,7 @@ local function copyCard(args) -- cardN, context
         table.insert(G.playing_cards, _card)
         G.hand:emplace(_card)
         _card.states.visible = nil
+        playing_card_joker_effects({[1] = _card})
         G.E_MANAGER:add_event(Event({
             func = function()
                 _card:start_materialize()
